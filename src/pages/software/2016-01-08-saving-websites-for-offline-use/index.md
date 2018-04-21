@@ -15,9 +15,9 @@ As the manual describes it, wget is a *non-interactive network downloader*. Ofte
 
 In my case, I was working on a pet project for my Garmin watch and wanted the Garmin Connect IQ SDK available to me on a transatlantic flight, in case wifi doesn't work. This could easily be accomplished with this:
 
-{{< highlight bash >}}
+```bash
 wget -r http://developer.garmin.com/downloads/connect-iq/monkey-c/doc/index.html
-{{< / highlight >}}
+```
 
 The default depth of the recursion is 5, so in some cases you might want to bump it down with **-l**, to prevent a chain-reaction-like download.
 

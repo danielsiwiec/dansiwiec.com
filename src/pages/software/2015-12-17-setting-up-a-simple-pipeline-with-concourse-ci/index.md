@@ -43,9 +43,9 @@ A relatively new concept, personal builds, allow you to run an instance of the p
 ## Let's go
 
 First, clone my demo repo [here](https://github.com/danielsiwiec/concourse-demo) and do
-{{< highlight bash >}}
+```bash
   vagrant up
-{{< / highlight >}}
+```
 You know you're on the right path, when you see this at [http://192.168.100.4:8080/](http://192.168.100.4:8080/)
 
 ![no-pipelines](no-pipelines.png)
@@ -54,9 +54,9 @@ You know you're on the right path, when you see this at [http://192.168.100.4:80
 Second, download the CLI tool, **fly** via the link on the screen above, make it executable (```chmod +x fly```) and put it in a place that's on the PATH (e.g. ```/usr/bin/```)
 
 Now, let's configure the pipeline. Yes, over the CLI - no pointy-clicky operations!
-{{< highlight bash >}}
+```bash
   fly set-pipeline -c pipeline/pipeline.yml -p demo
-{{< / highlight >}}
+```
 
 If everything goes right, you'll see this on the main page:
 ![pipelines](pipeline.png)
@@ -64,16 +64,16 @@ The UI is very basic, but it's all a man could ever wish for. It does what it sh
 
 Let's switch over to the terminal and see what else **fly** can do for us:
 
-{{< highlight bash >}}
+```bash
 fly pipelines
 
   name  paused
   demo  yes
-{{< / highlight >}}
+```
 
 That's pretty self explanatory. What else?
 
-{{< highlight bash >}}
+```bash
 fly get-pipeline --pipeline demo
 
   groups: []
@@ -92,15 +92,15 @@ fly get-pipeline --pipeline demo
     file: sources/pipeline/install.yml
   - task: test
     file: sources/pipeline/test.yml
-{{< / highlight >}}
+```
 
 The pipeline starts in a paused state, so let's turn it on:
 
-{{< highlight bash >}}
+```bash
 fly unpause-pipeline -p demo
 
   unpaused 'demo'
-{{< / highlight >}}
+```
 
 In a few seconds your screen should change to this, which indicates the pipeline is running:
 ![running](pipeline-running.png)
@@ -109,7 +109,7 @@ Additionally, there are two **fly** commands that allow us to peak into task's e
 
 **watch** displays a log stream for the selected, currently running build:
 
-{{< highlight bash >}}
+```bash
 fly watch -j demo/test
   Cloning into '/tmp/build/get'...
   7341378 fix install input
@@ -120,11 +120,11 @@ fly watch -j demo/test
   npm info using node@v4.2.3
   ...
   ...
-{{< / highlight >}}
+```
 
 **intercept** allows to ssh into a container of a recently finished task and inspect its contents:
 
-{{< highlight bash >}}
+```bash
 fly intercept -j demo/test -s test
   root@8439shbpuqe:~# cd /tmp/build/0dfa9ec2-3566-4a35-6491-e6517a888e7b/
   root@8439shbpuqe:/tmp/build/0dfa9ec2-3566-4a35-6491-e6517a888e7b# ls -l
@@ -135,7 +135,7 @@ fly intercept -j demo/test -s test
   -rw-r--r-- 1 root root 364 Dec 17 09:30 package.json
   drwxr-xr-x 1 root root  96 Dec 17 09:30 pipeline
   drwxr-xr-x 1 root root  60 Dec 17 09:30 spec
-{{< / highlight >}}
+```
 
 # Notes
 
@@ -143,11 +143,11 @@ fly intercept -j demo/test -s test
 
 As usually with build pipelines, you'll want to pass some artifacts around. Either between resources, jobs or tasks. In this example, the result of the first task, install, is passed to the test task. The documentation isn't very specific about it, but each task has got an **implicit** output, named after the task name, so in order to for those two tasks to share the output we specify it in the install task definition like this:
 
-{{< highlight yaml >}}
+```yaml
 inputs:
   - name: install
     path: .
-{{< / highlight >}}
+```
 
 This instructs concourse to take the root folder of the install task and use it as a root folder of the test task.
 
@@ -155,7 +155,7 @@ This instructs concourse to take the root folder of the install task and use it 
 
 As I mentioned before, this is a very handy utility, that concourse, thanks to it's architecture based on inputs and outputs supports really well. To picture it, let's assume that we want to execute the test task, without committing the code to the central repository. It might be helpful especially in debugging scenarios, when our local environment is in some way different from the CI one and yields different results. This is how it's done:
 
-{{< highlight bash >}}
+```bash
 fly execute -c pipeline/test.yml -i install=.
   executing build 22
   initializing with docker:///node#4.2.3
@@ -168,7 +168,7 @@ fly execute -c pipeline/test.yml -i install=.
   5 specs, 0 failures
   Finished in 0.021 seconds
   succeeded
-{{< / highlight >}}
+```
 The **-i** flag specifies the inputs for the task, as defined in the task yaml (**test.yml** in this case).
 
 Side note: Currently, only running individual tasks is supported. To run a part of the pipeline, you'll have to manually combine the output of one task (using **-o** flag) with the input of the next one.

@@ -25,7 +25,7 @@ This short tutorial will demonstrate how to set up a second pipeline on snap ci 
 
 First, we create a new, empty branch. Don't worry, you will not need to synchronize it with master. It just unlocks some snap features.
 
-{{< highlight bash >}}
+```bash
 # create an orphan branch with a single dummy file
 git checkout --orphan empty
 rm -rf *
@@ -34,7 +34,7 @@ git add .
 git commit -m "Add some file to make the branch"
 # push the new 'empty' branch to the origin
 git push origin empty
-{{< / highlight >}}
+```
 
 ## Create a pipeline for that branch
 

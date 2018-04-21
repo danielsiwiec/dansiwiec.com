@@ -33,24 +33,24 @@ We will accomplish this using the **Client** and **Resource** classes separately
 
 Create a **creds.json** file, that looks like this:
 
-{{< highlight json >}}
+```json
 {
   "AccessKeyId":"AKIAJU37JJMCPAIWJTJT",
   "SecretAccessKey":"klMYNV8wfg/Jq68Rts12QsLvTjRs3+4edBzlhPOm"
 }
-{{< / highlight >}}
+```
 
 The keys are account specific. You can get yours on the AWS portal in the **Security Credentials** tab.
 
 Here's the code to create the ```Credentials``` object. We will use it in a bit.
 
-{{< highlight ruby >}}
+```ruby
 require 'aws-sdk'
 require 'json'
 
 creds = JSON.load(File.read('creds.json'))
 creds = Aws::Credentials.new(creds['AccessKeyId'], creds['SecretAccessKey'])
-{{< / highlight >}}
+```
 
 
 
@@ -58,13 +58,13 @@ creds = Aws::Credentials.new(creds['AccessKeyId'], creds['SecretAccessKey'])
 
 We start with creating the ```Client``` instance. Notice the use of previously created ```creds``` object.
 
-{{< highlight ruby >}}
+```ruby
 ec2 = Aws::EC2::Client.new(region:'us-west-1',credentials:creds)
-{{< / highlight >}}
+```
 
 Next, we list and reboot the instances:
 
-{{< highlight ruby >}}
+```ruby
 instance_ids = []
 ec2.describe_instances['reservations'].each do |reservation|
   reservation['instances'].each do |instance|
@@ -74,33 +74,33 @@ ec2.describe_instances['reservations'].each do |reservation|
 end
 
 ec2.reboot_instances(instance_ids: instance_ids)
-{{< / highlight >}}
+```
 
 
 Output:
-{{< highlight bash >}}
+```bash
 dsiwiec@NAdsiwiec aws]$ ruby list.rb
 ID: i-703f74b8 State: running Hostname: ec2-56-67-20-185.us-west-1.compute.amazonaws.com
 ID: i-1c1279d4 State: running Hostname: ec2-56-153-62-149.us-west-1.compute.amazonaws.com
-{{< / highlight >}}
+```
 
 # Resource approach
 
 First, we create the ```Resource``` instance, in a similar fashion.
-{{< highlight ruby >}}
+```ruby
 ec2 = Aws::EC2::Resource.new(region:'us-west-1',credentials:creds)
-{{< / highlight >}}
+```
 
 To list all instances, we use the ```instances``` method, which returns a Collection of
 [Instance](http://docs.aws.amazon.com/sdkforruby/api/Aws/EC2/Instance.html) objects.
 Notice the difference from the Client approach here.
 
-{{< highlight ruby >}}
+```ruby
 ec2.instances.each do |instance|
   puts "ID: #{instance.instance_id} State: #{instance.state.name} Hostname: #{instance.public_dns_name}"
   instance.reboot
 end
-{{< / highlight >}}
+```
 
 Once we have a collections of instances, we just iterate over them and output the properties.
 As we iterate over ```Instances```, we can also invoke the ```reboot``` method directly on the elements.

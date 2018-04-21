@@ -43,9 +43,9 @@ The next thing is to add the CNAME record which ties the domain to your github a
 
 
 Last thing to do, is to add a CNAME file in the root of your GitHub repo, that tells GitHub that THIS repo should be served, if the URL requested is **http://xyz.com**
-{{< highlight bash >}}
+```bash
 echo "leanoverboard.com" > CNAME
 git add . && git commit -m "Add CNAME file" && git push
-{{< / highlight >}}
+```
 
 After those steps, depending on TTL (time to live) and DNS propagation, it may take some time for the page to be available at the new URL.

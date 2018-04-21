@@ -15,21 +15,21 @@ If you find yourself needing to debug Gradle source code, here's a few simple st
 In this post I show an alternative solution which runs Gradle inside the IDE.
 
 * Clone Gradle repository:
-{{< highlight bash >}}
+```bash
 git clone git@github.com:gradle/gradle.git
-{{< / highlight >}}
+```
 
 * Checkout a specific release:
-{{< highlight bash >}}
+```bash
 git tag -l
 git checkout tags/REL_2.2.1
-{{< / highlight >}}
+```
 
 * Generate IntelliJ files:
-{{< highlight bash >}}
+```bash
 cd gradle
 ./gradlew idea
-{{< / highlight >}}
+```
 
 * Import Gradle project into IntelliJ:
 

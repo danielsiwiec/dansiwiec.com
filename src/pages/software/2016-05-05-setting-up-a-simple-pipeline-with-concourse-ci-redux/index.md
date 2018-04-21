@@ -43,9 +43,9 @@ A relatively new concept, personal builds, allow you to run an instance of the p
 ## Let's go
 
 First, clone my demo repo [here](https://github.com/danielsiwiec/concourse-demo) and do
-{{< highlight bash >}}
+```bash
   vagrant up
-{{< / highlight >}}
+```
 You know you're on the right path, when you see this at [http://192.168.100.4:8080/](http://192.168.100.4:8080/)
 
 ![no-pipelines](no-pipelines.png)
@@ -54,16 +54,16 @@ You know you're on the right path, when you see this at [http://192.168.100.4:80
 Second, download the CLI tool, **fly** via the link on the screen above, make it executable (```chmod +x fly```) and put it in a place that's on the PATH (e.g. ```/usr/bin/```)
 
 Before you're ready to use the CLI with your concourse CI instance, you need to log in
-{{< highlight bash >}}
+```bash
 fly -t lite login -c http://192.168.100.4:8080
-{{< / highlight >}}
+```
 
 From now on, we're *logged* into our instance and all the future requests will need reference this *session* with **-t lite**.
 
 Now, let's configure the pipeline. Yes, over the CLI - no pointy-clicky operations!
-{{< highlight bash >}}
+```bash
   fly set-pipeline -c pipeline/pipeline.yml -p demo -t lite
-{{< / highlight >}}
+```
 
 If everything goes right, you'll see this on the main page:
 ![pipelines](pipeline.png)
@@ -71,16 +71,16 @@ The UI is very basic, but it's all a man could ever wish for. It does what it sh
 
 Let's switch over to the terminal and see what else **fly** can do for us:
 
-{{< highlight bash >}}
+```bash
 fly pipelines -t lite
 
   name  paused
   demo  yes
-{{< / highlight >}}
+```
 
 That's pretty self explanatory. What else?
 
-{{< highlight bash >}}
+```bash
 fly get-pipeline --pipeline demo -t lite
 
   groups: []
@@ -99,15 +99,15 @@ fly get-pipeline --pipeline demo -t lite
     file: sources/pipeline/install.yml
   - task: test
     file: sources/pipeline/test.yml
-{{< / highlight >}}
+```
 
 The pipeline starts in a paused state, so let's turn it on:
 
-{{< highlight bash >}}
+```bash
 fly unpause-pipeline -p demo -t lite
 
   unpaused 'demo'
-{{< / highlight >}}
+```
 
 In a few seconds your screen should change to this, which indicates the pipeline is running:
 ![running](pipeline-running.png)
@@ -116,7 +116,7 @@ Additionally, there are two **fly** commands that allow us to peak into task's e
 
 **watch** displays a log stream for the selected, currently running build:
 
-{{< highlight bash >}}
+```bash
 fly watch -j demo/test -t lite
   Cloning into '/tmp/build/get'...
   7341378 fix install input
@@ -127,11 +127,11 @@ fly watch -j demo/test -t lite
   npm info using node@v4.2.3
   ...
   ...
-{{< / highlight >}}
+```
 
 **intercept** allows to ssh into a container of a recently finished task and inspect its contents:
 
-{{< highlight bash >}}
+```bash
 fly intercept -j demo/test -s test -t lite
   root@iugmregi666:/tmp/build/a94a8fe5# ls -la
   total 8
@@ -139,7 +139,7 @@ fly intercept -j demo/test -s test -t lite
   drwxr-xr-x 3 root root 4096 May  6 04:30 ..
   drwxr-xr-x 1 root root  128 May  6 04:30 sources
   drwxr-xr-x 1 root root   20 May  6 04:30 test-report
-{{< / highlight >}}
+```
 
 # Notes
 
@@ -166,14 +166,14 @@ The alternative to the above approach is to decrease the granularity of your tas
 
 As I mentioned before, this is a very handy utility, that concourse, thanks to it's architecture based on inputs and outputs supports really well. To picture it, let's assume that we want to execute the test task, without committing the code to the central repository. It might be helpful especially in debugging scenarios, when our local environment is in some way different from the CI one and yields different results. This is how it's done:
 
-{{< highlight bash >}}
+```bash
 fly execute -c pipeline/test.yml -i sources=. -o test-report=output -t lite
   executing build 22
   initializing with docker:///node#4.2.3
   running ./sources/pipeline/test.sh
   ...
   succeeded
-{{< / highlight >}}
+```
 
 The **-i** flag specifies the inputs for the task, as defined in the task yaml (**test.yml** in this case). With **-o** you specify output folders.
 

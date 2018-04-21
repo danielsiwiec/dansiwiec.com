@@ -30,9 +30,9 @@ Introducing **gh-deploy**. This module leverages this service and automates the 
 # Steps
 
 * Install the gh-deploy module
-{{< highlight bash >}}
+```bash
 npm install -g gh-deploy
-{{< / highlight >}}
+```
 * Run it
 
 ![Run it](runit.png)

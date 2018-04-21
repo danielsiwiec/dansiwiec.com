@@ -27,7 +27,7 @@ Jekyll, on the other hand. is a static page generator, which means the content i
 
 As mentioned previously, Jekyll stores tags in post's metadata, so displaying it is as easy as accessing it:
 
-{{< highlight liquid >}}
+```liquid
 {% raw %}
 
 {% if page.tags.size > 0 %}
@@ -44,7 +44,7 @@ As mentioned previously, Jekyll stores tags in post's metadata, so displaying it
 {{ tags_content }}
 
 {% endraw %}
-{{< / highlight >}}
+```
 
 
 # Listing all tags
@@ -57,7 +57,7 @@ element is an array as follows: [0] - tag name and [1] - all posts for the tag.
 
 Knowing this, creating a list of tags requires just proper formatting:
 
-{{< highlight liquid >}}
+```liquid
 {% raw %}
 
 {% for tag in site.tags %}
@@ -67,21 +67,21 @@ Knowing this, creating a list of tags requires just proper formatting:
 {% endfor %}
 
 {% endraw %}
-{{< / highlight >}}
+```
 
 
 # Browsing posts by tag
 
 Now, for the dynamic content. The trick presented below uses client-side filtering. The code uses jQuery for DOM manipulation, so you need to add this to the `_includes/head.html`:
 
-{{< highlight html >}}
+```html
 <script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
-{{< / highlight >}}
+```
 
 A page containing all the posts is returned and filtered on the client side using
 JavaScript, basing on URL parameter.
 
-{{< highlight html >}}
+```html
 {% raw %}
 ---
 layout: page
@@ -112,7 +112,7 @@ $('#tagName').text(tagName);
 </script>
 
 {% endraw %}
-{{< / highlight >}}
+```
 
 That's all! There are other ways of adding tag support to Jekyll. A different approach generating all tag pages up-front, upon deployment is described [here](http://charliepark.org/tags-in-jekyll/)
 

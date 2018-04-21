@@ -24,11 +24,11 @@ This approach is different from narrowing the execution to a single test case or
 
 Tag is a special marker on the test that adds a it to a virtual group. In javascript frameworks it is achieved via some keyword, which can later by used in a regular expression match by the test framework. Here's an example:
 
-{{< highlight javascript >}}
+```javascript
 it('should travel back in time #back', () => {
   expect(travelBack({now: 2016}, 16)).toEqual({now: 2000})
 })
-{{< / highlight >}}
+```
 
 The **#back** plays the role of the tag.
 
@@ -51,7 +51,7 @@ Jasmine has a concept of a *specFilter*. By default, it is switched off, but if 
 
 Here's an example:
 
-{{< highlight javascript >}}
+```javascript
 it('should travel forward #future', () => {
   expect(travelForward({now: 2016}, 15)).toEqual({now: 2031})
 })
@@ -59,13 +59,13 @@ it('should travel forward #future', () => {
 it('should travel back in time', () => {
   expect(travelBack({now: 2016}, 16)).toEqual({now: 2000})
 })
-{{< / highlight >}}
+```
 
 With tests defined this way, we can now pass the filter parameter as follows:
 
-{{< highlight bash >}}
+```bash
 jasmine --filter=#future
-{{< / highlight >}}
+```
 
 This will only run the test cases containing the **#future** tag.
 
@@ -73,7 +73,7 @@ This will only run the test cases containing the **#future** tag.
 
 Typically, you would run your tests with a karma runner, which abstracts the framework underneath. Karma exposes framework specific options through **client.args** property. Jasmin's specFilter functionality is available as grep flag. Here's what it looks like in the **karma.config.js**:
 
-{{< highlight javascript >}}
+```javascript
 module.exports = function (config) {
   config.set({
     frameworks: ['jasmine'],
@@ -82,62 +82,62 @@ module.exports = function (config) {
     }
   })
 }
-{{< / highlight >}}
+```
 
 If you want to change the filter on per-run basis (e.g. by suites - pre-commit, integration, end-to-end), then the above solution will not satisfy you. Luckily, karma allows you to set properties on the **config** variable via command-line arguments as follows:
 
-{{< highlight bash >}}
+```bash
 karma start --grep '#future'
-{{< / highlight >}}
+```
 
 Which can than be used in karma.conf.js:
-{{< highlight javascript >}}
+```javascript
 client: {
   args: ['--grep', config.grep]
 }
-{{< / highlight >}}
+```
 
 ## protractor
 
 Using tags with protractor is very simple. There are two options, which are equivalent. You can either pass the filter via CLI arguments:
 
-{{< highlight bash >}}
+```bash
 protractor --grep='#integration'
-{{< / highlight >}}
+```
 
 or in **protractor.conf.js**:
 
-{{< highlight javascript >}}
+```javascript
 exports.config = {
   ...,
   jasmineNodeOpts: {
     grep: '#integartion'
   }
 };
-{{< / highlight >}}
+```
 
 ## mocha
 
 Tagging tests in mocha is the simplest of all outlined scenarios here. Simply do:
 
-{{< highlight bash >}}
+```bash
 mocha --grep '#integration'
-{{< / highlight >}}
+```
 
 ### karma-mocha
 
 Applying tags mocha tags with a Karma runner is analogous to the karma-jasmine setup:
 
-{{< highlight javascript >}}
+```javascript
 client: {
   mocha: {
     grep: config.grep
   }
 }
-{{< / highlight >}}
+```
 
 and the execution is identical:
 
-{{< highlight bash >}}
+```bash
 karma start --grep '#future'
-{{< / highlight >}}
+```
