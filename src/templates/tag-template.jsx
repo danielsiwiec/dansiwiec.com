@@ -3,22 +3,18 @@ import Helmet from 'react-helmet'
 import Sidebar from '../components/Sidebar'
 import TagTemplateDetails from '../components/TagTemplateDetails'
 
-class TagTemplate extends React.Component {
-  render () {
-    const { title } = this.props.data.site.siteMetadata
-    const { tag } = this.props.pathContext
+export default props => {
+  const { title } = props.data.site.siteMetadata
+  const { tag } = props.pathContext
 
-    return (
-      <div>
-        <Helmet title={`All Posts tagged as "${tag}" - ${title}`} />
-        <Sidebar {...this.props} />
-        <TagTemplateDetails {...this.props} />
-      </div>
-    )
-  }
+  return (
+    <div>
+      <Helmet title={`All Posts tagged as "${tag}" - ${title}`} />
+      <Sidebar {...props} />
+      <TagTemplateDetails {...props} />
+    </div>
+  )
 }
-
-export default TagTemplate
 
 export const pageQuery = graphql`
   query TagPage($tag: String) {

@@ -2,26 +2,22 @@ import React from 'react'
 import Helmet from 'react-helmet'
 import PageTemplateDetails from '../components/PageTemplateDetails'
 
-class PageTemplate extends React.Component {
-  render () {
-    const { title } = this.props.data.site.siteMetadata
-    const page = this.props.data.markdownRemark
-    const pageTitle = page.frontmatter.title
-    const excerpt = page.excerpt
+export default props => {
+  const { title } = props.data.site.siteMetadata
+  const page = props.data.markdownRemark
+  const pageTitle = page.frontmatter.title
+  const excerpt = page.excerpt
 
-    return (
-      <div>
-        <Helmet>
-          <title>{`${pageTitle} - ${title}`}</title>
-          <meta name='description' content={excerpt} />
-        </Helmet>
-        <PageTemplateDetails {...this.props} />
-      </div>
-    )
-  }
+  return (
+    <div>
+      <Helmet>
+        <title>{`${pageTitle} - ${title}`}</title>
+        <meta name='description' content={excerpt} />
+      </Helmet>
+      <PageTemplateDetails {...props} />
+    </div>
+  )
 }
-
-export default PageTemplate
 
 export const pageQuery = graphql`
   query PageBySlug($slug: String!) {
