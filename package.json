@@ -46,7 +46,6 @@
     "gh-pages": "^1.1.0",
     "lost": "^8.2.0",
     "postcss-pxtorem": "^4.0.1",
-    "prettier": "^1.10.2",
     "standard": "^11.0.1"
   },
   "standard": {
