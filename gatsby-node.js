@@ -103,16 +103,6 @@ exports.onCreateNode = ({ node, boundActionCreators, getNode }) => {
     node.internal.type === 'MarkdownRemark' &&
     typeof node.slug === 'undefined'
   ) {
-    // const fileNode = getNode(node.parent);
-    // let slug = fileNode.fields.slug;
-    // if (typeof node.frontmatter.path !== 'undefined') {
-    //   slug = node.frontmatter.path;
-    // }
-    // createNodeField({
-    //   node,
-    //   name: 'slug',
-    //   value: slug
-    // });
     const value = createFilePath({ node, getNode })
     createNodeField({
       name: `slug`,
