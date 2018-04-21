@@ -5,7 +5,12 @@ import Sidebar from '../components/Sidebar';
 
 class IndexRoute extends React.Component {
   render() {
+    const items = [];
     const { title, subtitle } = this.props.data.site.siteMetadata;
+    const posts = this.props.data.allMarkdownRemark.edges;
+    posts.forEach((post) => {
+      items.push(<Post data={post} key={post.node.fields.slug} />);
+    });
 
     return (
       <div>
@@ -16,6 +21,7 @@ class IndexRoute extends React.Component {
         <Sidebar {...this.props} />
         <div className="content">
           <div className="content__inner">
+            {items}
           </div>
         </div>
       </div>
@@ -26,7 +32,7 @@ class IndexRoute extends React.Component {
 export default IndexRoute;
 
 export const pageQuery = graphql`
-  query IndexQuery {
+  query SoftwareQuery {
     site {
       siteMetadata {
         title
@@ -43,6 +49,26 @@ export const pageQuery = graphql`
           github
           linkedin
           instagram
+        }
+      }
+    }
+    allMarkdownRemark(
+        limit: 1000,
+        filter: { frontmatter: { category: {eq: "Software"}, layout: { eq: "post" }, draft: { ne: true } } },
+        sort: { order: DESC, fields: [frontmatter___date] }
+      ){
+      edges {
+        node {
+          fields {
+            slug
+            categorySlug
+          }
+          frontmatter {
+            title
+            date
+            category
+          }
+          excerpt
         }
       }
     }
