@@ -15,7 +15,7 @@ I enjoy long, solitary trips. Just the bike and tens of miles of spectacular Bay
 Take a peek at [bikes](biking/bikes) I'm riding.
 
 ### Hiking
-Backpacking, camping, day-hiking, bushwacking, you name it! Here's some memorable [escapades](/_fitness/hiking).
+Backpacking, camping, day-hiking, bushwacking, you name it! Here's some memorable [escapades](hiking).
 
 ### CrossFit
 I recently started training [here](http://sanfranciscocrossfit.com/). Great space and friendly people!
