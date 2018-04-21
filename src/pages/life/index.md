@@ -4,15 +4,15 @@ layout: page
 ---
 
 ### Races
-Come to join or cheer me on at my [upcoming races](/life/races/upcoming)! Also, check out some of my [recent starts](/life/races/recent)
+Come to join or cheer me on at my [upcoming races](races/upcoming)! Also, check out some of my [recent starts](races/recent)
 
 ### Swimming
 I swim at the Aquatic park, in the San Francisco Bay, usually early mornings or evenings. Recently working on pushing the distance towards 2 miles.
 
 ### Biking
-I enjoy long, solitary trips. Just the bike and tens of miles of spectacular Bay Area landscapes. Check out some of them [here](/_fitness/biking/trips).
+I enjoy long, solitary trips. Just the bike and tens of miles of spectacular Bay Area landscapes. Check out some of them [here](biking/trips).
 
-Take a peek at [bikes](/_fitness/biking/bikes) I'm riding.
+Take a peek at [bikes](biking/bikes) I'm riding.
 
 ### Hiking
 Backpacking, camping, day-hiking, bushwacking, you name it! Here's some memorable [escapades](/_fitness/hiking).
