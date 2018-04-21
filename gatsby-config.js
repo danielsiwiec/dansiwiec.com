@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    url: 'https://lumen.netlify.com',
+    url: 'https://dansiwiec.com',
     title: 'Blog by Dan Siwiec',
     subtitle: 'On things making me happy in life',
     copyright: '© All rights reserved.',
