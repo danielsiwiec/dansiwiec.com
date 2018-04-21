@@ -15,7 +15,6 @@
   "author": "Dan Siwiec",
   "license": "MIT",
   "dependencies": {
-    "bluebird": "^3.5.1",
     "gatsby": "^1.9.164",
     "gatsby-link": "^1.6.34",
     "gatsby-plugin-catch-links": "^1.0.14",
@@ -52,6 +51,8 @@
     "globals": [
       "graphql"
     ],
-    "ignore": ["public/"]
+    "ignore": [
+      "public/"
+    ]
   }
 }

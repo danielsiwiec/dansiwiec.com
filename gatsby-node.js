@@ -1,21 +1,19 @@
 const _ = require('lodash')
-const Promise = require('bluebird')
 const path = require('path')
 const lost = require('lost')
 const pxtorem = require('postcss-pxtorem')
 const slash = require('slash')
 const { createFilePath } = require('gatsby-source-filesystem')
 
-exports.createPages = ({ graphql, boundActionCreators }) => {
+exports.createPages = async ({ graphql, boundActionCreators }) => {
   const { createPage } = boundActionCreators
 
-  return new Promise((resolve, reject) => {
-    const postTemplate = path.resolve('./src/templates/post-template.jsx')
-    const pageTemplate = path.resolve('./src/templates/page-template.jsx')
-    const tagTemplate = path.resolve('./src/templates/tag-template.jsx')
-    const categoryTemplate = path.resolve('./src/templates/category-template.jsx')
+  const postTemplate = path.resolve('./src/templates/post-template.jsx')
+  const pageTemplate = path.resolve('./src/templates/page-template.jsx')
+  const tagTemplate = path.resolve('./src/templates/tag-template.jsx')
+  const categoryTemplate = path.resolve('./src/templates/category-template.jsx')
 
-    graphql(`
+  const result = await graphql(`
     {
       allMarkdownRemark(
         limit: 1000,
@@ -35,60 +33,57 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
         }
       }
     }
-  `).then((result) => {
-      if (result.errors) {
-        console.log(result.errors)
-        reject(result.errors)
-      }
+  `)
 
-      _.each(result.data.allMarkdownRemark.edges, (edge) => {
-        if (_.get(edge, 'node.frontmatter.layout') === 'page') {
-          createPage({
-            path: edge.node.fields.slug,
-            component: slash(pageTemplate),
-            context: { slug: edge.node.fields.slug }
-          })
-        } else if (_.get(edge, 'node.frontmatter.layout') === 'post') {
-          createPage({
-            path: edge.node.fields.slug,
-            component: slash(postTemplate),
-            context: { slug: edge.node.fields.slug }
-          })
+  if (result.errors) {
+    console.log(result.errors)
+    throw new Error(result.errors)
+  }
 
-          let tags = []
-          if (_.get(edge, 'node.frontmatter.tags')) {
-            tags = tags.concat(edge.node.frontmatter.tags)
-          }
-
-          tags = _.uniq(tags)
-          _.each(tags, (tag) => {
-            const tagPath = `/tags/${_.kebabCase(tag)}/`
-            createPage({
-              path: tagPath,
-              component: tagTemplate,
-              context: { tag }
-            })
-          })
-
-          let categories = []
-          if (_.get(edge, 'node.frontmatter.category')) {
-            categories = categories.concat(edge.node.frontmatter.category)
-          }
-
-          categories = _.uniq(categories)
-          _.each(categories, (category) => {
-            const categoryPath = `/categories/${_.kebabCase(category)}/`
-            createPage({
-              path: categoryPath,
-              component: categoryTemplate,
-              context: { category }
-            })
-          })
-        }
+  _.each(result.data.allMarkdownRemark.edges, (edge) => {
+    if (_.get(edge, 'node.frontmatter.layout') === 'page') {
+      createPage({
+        path: edge.node.fields.slug,
+        component: slash(pageTemplate),
+        context: { slug: edge.node.fields.slug }
+      })
+    } else if (_.get(edge, 'node.frontmatter.layout') === 'post') {
+      createPage({
+        path: edge.node.fields.slug,
+        component: slash(postTemplate),
+        context: { slug: edge.node.fields.slug }
       })
 
-      resolve()
-    })
+      let tags = []
+      if (_.get(edge, 'node.frontmatter.tags')) {
+        tags = tags.concat(edge.node.frontmatter.tags)
+      }
+
+      tags = _.uniq(tags)
+      _.each(tags, (tag) => {
+        const tagPath = `/tags/${_.kebabCase(tag)}/`
+        createPage({
+          path: tagPath,
+          component: tagTemplate,
+          context: { tag }
+        })
+      })
+
+      let categories = []
+      if (_.get(edge, 'node.frontmatter.category')) {
+        categories = categories.concat(edge.node.frontmatter.category)
+      }
+
+      categories = _.uniq(categories)
+      _.each(categories, (category) => {
+        const categoryPath = `/categories/${_.kebabCase(category)}/`
+        createPage({
+          path: categoryPath,
+          component: categoryTemplate,
+          context: { category }
+        })
+      })
+    }
   })
 }
 
