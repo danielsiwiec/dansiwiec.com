@@ -10,7 +10,6 @@ export default props => {
   const { author, subtitle, copyright, menu } = props.data.site.siteMetadata
   const isHomePage = get(location, 'pathname', '/') === '/'
 
-  /* eslint-disable jsx-a11y/img-redundant-alt */
   const authorBlock = (
     <div>
       <Link to='/'>
@@ -34,7 +33,6 @@ export default props => {
       <p className='sidebar__author-subtitle'>{subtitle}</p>
     </div>
   )
-  /* eslint-enable jsx-a11y/img-redundant-alt */
 
   return (
     <div className='sidebar'>
