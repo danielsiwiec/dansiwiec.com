@@ -6,14 +6,14 @@ class PostTemplate extends React.Component {
   render() {
     const { title, subtitle } = this.props.data.site.siteMetadata;
     const post = this.props.data.markdownRemark;
-    const { title: postTitle, description: postDescription } = post.frontmatter;
-    const description = postDescription !== null ? postDescription : subtitle;
+    const postTitle = post.frontmatter.title;
+    const excerpt = post.excerpt
 
     return (
       <div>
         <Helmet>
           <title>{`${postTitle} - ${title}`}</title>
-          <meta name="description" content={description} />
+          <meta name="description" content={excerpt} />
         </Helmet>
         <PostTemplateDetails {...this.props} />
       </div>
@@ -47,8 +47,8 @@ export const pageQuery = graphql`
         title
         tags
         date
-        description
       }
+      excerpt
     }
   }
 `;
