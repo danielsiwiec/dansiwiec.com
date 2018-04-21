@@ -6,7 +6,7 @@ tags:
 - jekyll
 - javascript
 title: Implementing tags in Jekyll
-url: /2015/03/27/implementing-tags-in-jekyll/
+path: /2015/03/27/implementing-tags-in-jekyll/
 ---
 
 When you're considering [Jekyll](http://jekyllrb.com/) as your blogging platform, you'll soon discover it's **tags** support is not complete.

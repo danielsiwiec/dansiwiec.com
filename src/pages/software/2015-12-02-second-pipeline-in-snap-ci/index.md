@@ -6,7 +6,7 @@ tags:
 - ci
 - snap-ci
 title: Setting up a second pipeline in snap ci
-url: /2015/12/02/second-pipeline-in-snap-ci/
+path: /2015/12/02/second-pipeline-in-snap-ci/
 ---
 
 # Problem statement

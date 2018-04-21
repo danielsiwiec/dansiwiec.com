@@ -11,7 +11,7 @@ tags:
 - tutorial
 - connectiq
 title: Writing a Garmin Connect IQ application
-url: /2016/05/25/writing-an-app-for-garmin-sdk/
+path: /2016/05/25/writing-an-app-for-garmin-sdk/
 ---
 
 # Intro

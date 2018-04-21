@@ -4,6 +4,7 @@ const path = require('path');
 const lost = require('lost');
 const pxtorem = require('postcss-pxtorem');
 const slash = require('slash');
+const { createFilePath } = require('gatsby-source-filesystem')
 
 exports.createPages = ({ graphql, boundActionCreators }) => {
   const { createPage } = boundActionCreators;
@@ -102,16 +103,22 @@ exports.onCreateNode = ({ node, boundActionCreators, getNode }) => {
     node.internal.type === 'MarkdownRemark' &&
     typeof node.slug === 'undefined'
   ) {
-    const fileNode = getNode(node.parent);
-    let slug = fileNode.fields.slug;
-    if (typeof node.frontmatter.path !== 'undefined') {
-      slug = node.frontmatter.path;
-    }
+    // const fileNode = getNode(node.parent);
+    // let slug = fileNode.fields.slug;
+    // if (typeof node.frontmatter.path !== 'undefined') {
+    //   slug = node.frontmatter.path;
+    // }
+    // createNodeField({
+    //   node,
+    //   name: 'slug',
+    //   value: slug
+    // });
+    const value = createFilePath({ node, getNode })
     createNodeField({
+      name: `slug`,
       node,
-      name: 'slug',
-      value: slug
-    });
+      value,
+    })
 
     if (node.frontmatter.tags) {
       const tagSlugs = node.frontmatter.tags.map(tag => `/tags/${_.kebabCase(tag)}/`);

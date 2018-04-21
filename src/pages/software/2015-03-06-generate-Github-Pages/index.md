@@ -4,7 +4,7 @@ category: "Software"
 date: 2015-03-06T00:00:00Z
 links:
 - name: github
-  url: https://github.com/danielsiwiec/gh-deploy
+  path: https://github.com/danielsiwiec/gh-deploy
 - name: npmjs
   url: https://www.npmjs.com/package/gh-deploy
 tags:

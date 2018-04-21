@@ -7,7 +7,7 @@ tags:
 - intellij
 - debugging
 title: Debugging Gradle source code in IntelliJ
-url: /2014/12/21/debugging-gradle-source-code-in-intellij/
+path: /2014/12/21/debugging-gradle-source-code-in-intellij/
 ---
 
 If you find yourself needing to debug Gradle source code, here's a few simple steps you need to follow. There are some great posts online that explain how to attach a remote debugger, like [this one](http://blog.gaku.net/gradle-debugging/).
