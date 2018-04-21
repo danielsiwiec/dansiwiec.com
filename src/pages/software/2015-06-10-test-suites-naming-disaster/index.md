@@ -1,5 +1,6 @@
 ---
-category: "programming"
+layout: post
+category: "Software"
 date: 2015-06-10T00:00:00Z
 hidden: true
 tags:

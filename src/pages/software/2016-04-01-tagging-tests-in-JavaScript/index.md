@@ -1,5 +1,6 @@
 ---
-category: "programming"
+layout: post
+category: "Software"
 date: 2016-04-01T00:00:00Z
 links:
 - name: github

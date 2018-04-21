@@ -1,5 +1,6 @@
 ---
-category: "programming"
+layout: post
+category: "Software"
 date: 2014-12-21T00:00:00Z
 tags:
 - gradle

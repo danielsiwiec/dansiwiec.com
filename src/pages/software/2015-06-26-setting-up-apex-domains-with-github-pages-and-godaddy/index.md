@@ -1,5 +1,6 @@
 ---
-category: "programming"
+layout: post
+category: "Software"
 date: 2015-06-26T00:00:00Z
 tags:
 - github
