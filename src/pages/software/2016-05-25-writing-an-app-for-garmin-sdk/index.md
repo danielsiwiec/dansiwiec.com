@@ -30,7 +30,7 @@ Clone [this](https://github.com/danielsiwiec/garmin-connect-seed) repository to 
 
 ## Hello... Monkey C
 Confirm your setup is working by typing ```make run``` in the project's root folder. You should see this:
-![monkey](/img/blog/monkey-c-tutorial/monkey.png)
+![monkey](monkey.png)
 
 # Overview of the SDK
 If this is your first contact with Monkey C, I recommend skimming through the official [introduction](https://developer.garmin.com/connect-iq/programmers-guide/monkey-c/), as I will not be covering the language basics.

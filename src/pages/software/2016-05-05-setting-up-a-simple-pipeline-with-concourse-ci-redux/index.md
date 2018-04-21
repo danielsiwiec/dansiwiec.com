@@ -48,7 +48,7 @@ First, clone my demo repo [here](https://github.com/danielsiwiec/concourse-demo)
 {{< / highlight >}}
 You know you're on the right path, when you see this at [http://192.168.100.4:8080/](http://192.168.100.4:8080/)
 
-![no-pipelines](/img/blog/concourse-simple-redux/no-pipelines.png)
+![no-pipelines](no-pipelines.png)
 
 
 Second, download the CLI tool, **fly** via the link on the screen above, make it executable (```chmod +x fly```) and put it in a place that's on the PATH (e.g. ```/usr/bin/```)
@@ -66,7 +66,7 @@ Now, let's configure the pipeline. Yes, over the CLI - no pointy-clicky operatio
 {{< / highlight >}}
 
 If everything goes right, you'll see this on the main page:
-![pipelines](/img/blog/concourse-simple-redux/pipeline.png)
+![pipelines](pipeline.png)
 The UI is very basic, but it's all a man could ever wish for. It does what it should - shows your pipeline's status.
 
 Let's switch over to the terminal and see what else **fly** can do for us:
@@ -110,7 +110,7 @@ fly unpause-pipeline -p demo -t lite
 {{< / highlight >}}
 
 In a few seconds your screen should change to this, which indicates the pipeline is running:
-![running](/img/blog/concourse-simple-redux/pipeline-running.png)
+![running](pipeline-running.png)
 
 Additionally, there are two **fly** commands that allow us to peak into task's execution:
 

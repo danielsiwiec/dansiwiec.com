@@ -42,7 +42,7 @@ A second branch allows you to set up a new pipeline for it in snap.
 
 On your project page go to Configuration -> Clones and fill out the form as follows:
 
-![Clone project](/img/blog/second-snap/clone.png)
+![Clone project](clone.png)
 
 Of course you don't want to synchronize this branch with master just so that you can have another pipelinem, so here's where we apply some hackery.
 
@@ -50,7 +50,7 @@ Of course you don't want to synchronize this branch with master just so that you
 
 You can modify the new pipeline, but by default it will be a clone of the original one. To make it run off the master branch, as the first step in the stage script we checkout the master branch:
 
-![Checkout master](/img/blog/second-snap/master.png)
+![Checkout master](master.png)
 
 Now, you're free to edit this pipeline to whatever you want, without affecting the original master pipeline.
 

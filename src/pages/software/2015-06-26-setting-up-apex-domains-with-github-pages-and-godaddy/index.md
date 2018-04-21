@@ -34,12 +34,12 @@ The configuration for proper domain resolution, consists of the following steps:
 
 Once logged into GoDaddy, go to your domain 'Manage domain' control panel. Here you need to configure two things. The first thing is adding the A record, which basically points a domain to an IP address. Here's what it should look like once you're done:
 
-![A record](/img/blog/apex/arecord.png)
+![A record](arecord.png)
 
 In case the GitHub's IP addresses change, check [here](https://help.github.com/articles/tips-for-configuring-an-a-record-with-your-dns-provider/) for reference.
 
 The next thing is to add the CNAME record which ties the domain to your github account:
-![CNAME](/img/blog/apex/cname.png)
+![CNAME](cname.png)
 
 
 Last thing to do, is to add a CNAME file in the root of your GitHub repo, that tells GitHub that THIS repo should be served, if the URL requested is **http://xyz.com**

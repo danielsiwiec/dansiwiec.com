@@ -35,25 +35,25 @@ npm install -g gh-deploy
 {{< / highlight >}}
 * Run it
 
-![Run it](/img/blog/gh-deploy/runit.png)
+![Run it](runit.png)
 
 * Follow the wizard steps
 
-![Wizard](/img/blog/gh-deploy/wizard.png)
+![Wizard](wizard.png)
 
 * Wait for the page to be created
 
-![Finish](/img/blog/gh-deploy/finish.png)
+![Finish](finish.png)
 
 # Results
 
 * The page deployed and accessible
 
-![Hello world](/img/blog/gh-deploy/hello.png)
+![Hello world](hello.png)
 
 * GitHub repo created with a stub index file:
 
-![Wizard](/img/blog/gh-deploy/github.png)
+![Wizard](github.png)
 
 # Demos
 

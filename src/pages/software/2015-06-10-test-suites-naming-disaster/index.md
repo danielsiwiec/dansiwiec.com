@@ -10,7 +10,7 @@ title: Test suites naming disaster
 path: /2015/06/10/test-suites-naming-disaster/
 ---
 
-<img style="text-align: center" src="/img/blog/test-names/no_integration.png" />
+![no integration](no_integration.png)
 
 At my last client, a multi-billion dollar healthcare organization, the landscape consisted of numerous recently created teams, together forming a bigger group within the IT department engaged in a replatforming initiative. Part of our job was to establish modern software practices within the group, including testing standards.
 
