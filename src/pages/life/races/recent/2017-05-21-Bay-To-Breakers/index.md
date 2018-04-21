@@ -8,7 +8,7 @@ layout: page
 
 Wish I could say I had the smile below at the finish line... Great race and pushed myself pretty hard.
 
-![](/img/races/baytobreakers2017.jpg)
+![](baytobreakers2017.jpg)
 
 Results:
-![](/img/races/baytobreakers2017results.png)
+![](baytobreakers2017results.png)

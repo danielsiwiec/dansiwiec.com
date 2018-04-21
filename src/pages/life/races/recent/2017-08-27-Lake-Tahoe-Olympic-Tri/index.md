@@ -8,6 +8,6 @@ layout: page
 
 First Olympic Triathlon at the beautiful Lake Tahoe.
 
-![](/img/races/tahoe-tri-swim.JPG)
-![](/img/races/tahoe-tri-bike.JPG)
-![](/img/races/tahoe-tri-run.JPG)
+![](tahoe-tri-swim.JPG)
+![](tahoe-tri-bike.JPG)
+![](tahoe-tri-run.JPG)

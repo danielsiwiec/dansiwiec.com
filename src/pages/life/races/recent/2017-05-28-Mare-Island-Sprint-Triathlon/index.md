@@ -7,7 +7,7 @@ layout: page
 ---
 
 Great triathlon debut in Vallejo, CA. More to come!
-![mare](/img/races/mareisland.jpg)
+![mare](mareisland.jpg)
 
 Results:
-![mare results](/img/races/mareislandresults.png)
+![mare results](mareislandresults.png)

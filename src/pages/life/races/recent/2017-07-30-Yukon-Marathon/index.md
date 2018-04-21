@@ -6,8 +6,8 @@ category: race
 layout: page
 ---
 
-![](/img/races/yukon-hill.JPG)
+![](yukon-hill.JPG)
 
 First marathon complete and finished just under 5 hours.
 
-![](/img/races/yukon-finish.JPG)
+![](yukon-finish.JPG)
