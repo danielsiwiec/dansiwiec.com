@@ -1,14 +1,11 @@
 import React from 'react'
-import get from 'lodash/get'
 import Link from 'gatsby-link'
 import Menu from '../Menu'
 import Links from '../Links'
 import './style.scss'
 
 export default props => {
-  const { location } = props
   const { author, subtitle, copyright, menu } = props.data.site.siteMetadata
-  const isHomePage = get(location, 'pathname', '/') === '/'
 
   const authorBlock = (
     <div>
@@ -21,15 +18,9 @@ export default props => {
           alt={author.name}
         />
       </Link>
-      { isHomePage ? (
-        <h1 className='sidebar__author-title'>
-          <Link className='sidebar__author-title-link' to='/'>{author.name}</Link>
-        </h1>
-      )
-        : <h2 className='sidebar__author-title'>
-          <Link className='sidebar__author-title-link' to='/'>{author.name}</Link>
-        </h2>
-      }
+      <h1 className='sidebar__author-title'>
+        <Link className='sidebar__author-title-link' to='/'>{author.name}</Link>
+      </h1>
       <p className='sidebar__author-subtitle'>{subtitle}</p>
     </div>
   )
