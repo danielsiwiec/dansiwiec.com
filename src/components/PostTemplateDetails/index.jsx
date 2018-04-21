@@ -8,10 +8,11 @@ export default props => {
   const { subtitle, author } = props.data.site.siteMetadata
   const post = props.data.markdownRemark
   const tags = post.fields.tagSlugs
+  const category = post.frontmatter.category
 
   const homeBlock = (
     <div>
-      <Link className='post-single__home-button' to='/'>All Articles</Link>
+      <Link className='post-single__home-button' to={`/categories/${category}`}>All {category}</Link>
     </div>
   )
 
