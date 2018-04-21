@@ -1,12 +1,12 @@
-import React from 'react';
-import Helmet from 'react-helmet';
-import Link from 'gatsby-link';
-import Sidebar from '../../../../components/Sidebar';
+import React from 'react'
+import Helmet from 'react-helmet'
+import Link from 'gatsby-link'
+import Sidebar from '../../../../components/Sidebar'
 import moment from 'moment'
 
 export default (props) => {
-  const { title, subtitle } = props.data.site.siteMetadata;
-  const posts = props.data.allMarkdownRemark.edges;
+  const { title, subtitle } = props.data.site.siteMetadata
+  const posts = props.data.allMarkdownRemark.edges
   const items = posts.map(post => {
     return race(post.node.frontmatter.date, post.node.frontmatter.title, post.node.fields.slug)
   })
@@ -15,19 +15,19 @@ export default (props) => {
     <div>
       <Helmet>
         <title>{title}</title>
-        <meta name="description" content={subtitle} />
+        <meta name='description' content={subtitle} />
       </Helmet>
       <Sidebar {...props} />
-      <div className="content">
-        <div className="content__inner">
+      <div className='content'>
+        <div className='content__inner'>
           <h2>Recent races</h2>
           <ul>
-          {items}
+            {items}
           </ul>
         </div>
       </div>
     </div>
-  );
+  )
 }
 
 const race = (date, title, slug) => {
@@ -72,4 +72,4 @@ export const pageQuery = graphql`
     }
   }
   
-`;
+`

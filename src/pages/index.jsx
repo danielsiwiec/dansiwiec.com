@@ -1,29 +1,27 @@
-import React from 'react';
-import Helmet from 'react-helmet';
-import Post from '../components/Post';
-import Sidebar from '../components/Sidebar';
+import React from 'react'
+import Helmet from 'react-helmet'
+import Sidebar from '../components/Sidebar'
 
 class IndexRoute extends React.Component {
-  render() {
-    const { title, subtitle } = this.props.data.site.siteMetadata;
+  render () {
+    const { title, subtitle } = this.props.data.site.siteMetadata
 
     return (
       <div>
         <Helmet>
           <title>{title}</title>
-          <meta name="description" content={subtitle} />
+          <meta name='description' content={subtitle} />
         </Helmet>
         <Sidebar {...this.props} />
-        <div className="content">
-          <div className="content__inner">
-          </div>
+        <div className='content'>
+          <div className='content__inner' />
         </div>
       </div>
-    );
+    )
   }
 }
 
-export default IndexRoute;
+export default IndexRoute
 
 export const pageQuery = graphql`
   query IndexQuery {
@@ -47,4 +45,4 @@ export const pageQuery = graphql`
       }
     }
   }
-`;
+`

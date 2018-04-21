@@ -47,7 +47,7 @@ module.exports = {
             }
           },
           {
-            resolve: "gatsby-remark-embed-video",
+            resolve: 'gatsby-remark-embed-video',
             options: {
               related: false
             }
@@ -71,7 +71,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-google-fonts`,
       options: {
-        fonts: [`roboto\:400,400i,500,700`]
+        fonts: [`roboto:400,400i,500,700`]
       }
     },
     'gatsby-plugin-offline',
@@ -79,4 +79,4 @@ module.exports = {
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-postcss-sass'
   ]
-};
+}
