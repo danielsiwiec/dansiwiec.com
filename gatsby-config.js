@@ -11,6 +11,10 @@ module.exports = {
         path: '/software/'
       },
       {
+        label: 'Life',
+        path: '/life/'
+      },
+      {
         label: 'About me',
         path: '/about/'
       },
