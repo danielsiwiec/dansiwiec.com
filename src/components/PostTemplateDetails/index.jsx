@@ -2,31 +2,19 @@ import React from 'react'
 import Link from 'gatsby-link'
 import moment from 'moment'
 import Disqus from '../Disqus/Disqus'
+import TagList from '../TagList'
 import './style.scss'
 
 export default props => {
   const { subtitle, author } = props.data.site.siteMetadata
   const post = props.data.markdownRemark
-  const tags = post.fields.tagSlugs
+  const tagSlugs = post.fields.tagSlugs
+  const tags = post.frontmatter.tags
   const category = post.frontmatter.category
 
   const homeBlock = (
     <div>
       <Link className='post-single__home-button' to={`/categories/${category}`}>All {category}</Link>
-    </div>
-  )
-
-  const tagsBlock = (
-    <div className='post-single__tags'>
-      <ul className='post-single__tags-list'>
-        {tags && tags.map((tag, i) => (
-          <li className='post-single__tags-list-item' key={tag}>
-            <Link to={tag} className='post-single__tags-list-item-link'>
-              {post.frontmatter.tags[i]}
-            </Link>
-          </li>
-        ))}
-      </ul>
     </div>
   )
 
@@ -48,7 +36,7 @@ export default props => {
           </div>
         </div>
         <div className='post-single__footer'>
-          {tagsBlock}
+          <TagList tags={tags} tagSlugs={tagSlugs} />
           <hr />
           <p className='post-single__footer-text'>
             {subtitle}

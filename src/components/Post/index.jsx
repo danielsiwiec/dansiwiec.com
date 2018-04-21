@@ -2,11 +2,12 @@ import React from 'react'
 import Link from 'gatsby-link'
 import moment from 'moment'
 import './style.scss'
+import TagList from '../TagList'
 
 export default props => {
-  const { title, date, category } = props.data.node.frontmatter
+  const { title, date, category, tags } = props.data.node.frontmatter
   const excerpt = props.data.node.excerpt
-  const { slug, categorySlug } = props.data.node.fields
+  const { slug, categorySlug, tagSlugs } = props.data.node.fields
 
   return (
     <div className='post'>
@@ -25,6 +26,7 @@ export default props => {
         <Link className='post__title-link' to={slug}>{title}</Link>
       </h2>
       <p className='post__description'>{excerpt}</p>
+      <TagList tags={tags} tagSlugs={tagSlugs} />
       <Link className='post__readmore' to={slug}>Read</Link>
     </div>
   )
