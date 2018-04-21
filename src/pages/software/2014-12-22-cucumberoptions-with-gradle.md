@@ -1,6 +1,5 @@
 ---
-categories:
-- programming
+category: "programming"
 date: 2014-12-22T00:00:00Z
 tags:
 - cucmber

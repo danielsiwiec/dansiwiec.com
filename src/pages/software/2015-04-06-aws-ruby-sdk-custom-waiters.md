@@ -1,6 +1,5 @@
 ---
-categories:
-- programming
+category: "programming"
 date: 2015-04-06T00:00:00Z
 tags:
 - aws

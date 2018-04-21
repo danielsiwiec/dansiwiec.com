@@ -1,6 +1,5 @@
 ---
-categories:
-- programming
+category: "programming"
 date: 2015-03-06T00:00:00Z
 links:
 - name: github

@@ -1,6 +1,5 @@
 ---
-categories:
-- programming
+category: "programming"
 date: 2016-05-25T00:00:00Z
 draft: true
 tags:

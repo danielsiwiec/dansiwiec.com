@@ -1,6 +1,5 @@
 ---
-categories:
-- programming
+category: "programming"
 date: 2016-05-05T00:00:00Z
 tags:
 - ci
