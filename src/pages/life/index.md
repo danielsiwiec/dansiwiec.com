@@ -24,4 +24,4 @@ I recently started training [here](http://sanfranciscocrossfit.com/). Great spac
 Can't say enough about [Cal Sailing](https://www.cal-sailing.org/) club! It's much more than just a sailing club. It's a community.
 
 ### Cold exposure
-[Brrrrr](/_fitness/cold/)!!!
+[Brrrrr](cold)!!!
