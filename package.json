@@ -43,6 +43,7 @@
   },
   "devDependencies": {
     "gh-pages": "^1.1.0",
+    "husky": "^1.0.0-rc.6",
     "lost": "^8.2.0",
     "postcss-pxtorem": "^4.0.1",
     "standard": "^11.0.1"
@@ -54,5 +55,10 @@
     "ignore": [
       "public/"
     ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run lint"
+    }
   }
 }
