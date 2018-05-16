@@ -6,7 +6,6 @@ import TagList from '../TagList'
 import './style.scss'
 
 export default props => {
-  const { subtitle, author } = props.data.site.siteMetadata
   const post = props.data.markdownRemark
   const tagSlugs = post.fields.tagSlugs
   const tags = post.frontmatter.tags
@@ -38,12 +37,6 @@ export default props => {
         <div className='post-single__footer'>
           <TagList tags={tags} tagSlugs={tagSlugs} />
           <hr />
-          <p className='post-single__footer-text'>
-            {subtitle}
-            <a href={`https://twitter.com/${author.twitter}`} target='_blank' rel='noopener noreferrer'>
-              <br /> <strong>{author.name}</strong> on Twitter
-            </a>
-          </p>
           {commentsBlock}
         </div>
       </div>
