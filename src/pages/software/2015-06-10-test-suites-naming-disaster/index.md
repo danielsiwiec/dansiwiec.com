@@ -7,7 +7,6 @@ tags:
 - testing
 - consulting
 title: Test suites naming disaster
-path: /2015/06/10/test-suites-naming-disaster/
 ---
 
 ![no integration](no_integration.png)

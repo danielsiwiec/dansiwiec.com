@@ -6,7 +6,6 @@ tags:
 - github
 - godaddy
 title: Apex domains with GitHub pages and GoDaddy
-path: /2015/06/26/setting-up-apex-domains-with-github-pages-and-godaddy/
 ---
 
 In this tutorial, we'll cover how to link a github page to a GoDaddy domain.

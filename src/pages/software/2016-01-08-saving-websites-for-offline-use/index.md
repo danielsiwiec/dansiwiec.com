@@ -6,7 +6,6 @@ tags:
 - wget
 - offline
 title: Saving websites for offline use with wget
-path: /2016/01/08/saving-websites-for-offline-use/
 ---
 
 Welcome back in 2016! :) While doing some traveling around Christmas and New Year's, you might often find yourself in need of some web content, that's not available in downloadable format. After doing some research and only finding a couple archaic tools from the 90's, I came across a much preferable alternative. Here's a short post to kick off the year on how to do it with **wget**.

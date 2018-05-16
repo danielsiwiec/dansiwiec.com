@@ -7,7 +7,6 @@ tags:
 - maven
 - gradle
 title: cucumber.options with gradle
-path: /2014/12/22/cucumberoptions-with-gradle/
 ---
 
 So, to make Gradle work like the maven:

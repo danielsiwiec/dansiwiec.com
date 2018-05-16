@@ -7,7 +7,6 @@ tags:
 - blog
 - disqus
 title: Adding comments capability to your Jekyll blog with Disqus
-path: /2015/03/16/Adding-Comments-to-Jekyll/
 ---
 
 Adding comments to your Jekyll blog is very easy with Disqus support. There are 3 simple

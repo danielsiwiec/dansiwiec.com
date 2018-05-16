@@ -6,7 +6,6 @@ tags:
 - ci
 - concourse
 title: Setting up a simple pipeline with Concourse CI
-path: /2015/12/17/setting-up-a-simple-pipeline-with-concourse-ci/
 ---
 
 *For a refreshed version of this post, go [here](/2016/05/05/setting-up-a-simple-pipeline-with-concourse-ci-redux/)*

@@ -7,7 +7,6 @@ tags:
 - amazon
 - ruby
 title: 'AWS Ruby SDK v2: Client vs Resource'
-path: /2015/03/12/AWS-Ruby-SDK-Client-vs-Resource/
 ---
 
 Late last year, Amazon [announced](http://ruby.awsblog.com/post/Tx2NJE86FP0HHXX/Announcing-V2-of-the-AWS-SDK-for-Ruby) v2 of AWS Ruby SDK. Among other features, Amazon added **Resource** and **Client** classes for each of their services.
