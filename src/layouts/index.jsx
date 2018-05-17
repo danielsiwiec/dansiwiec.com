@@ -8,7 +8,7 @@ export default props => {
 
   return (
     <div className='layout'>
-      <Helmet defaultTitle='Blog by John Doe' />
+      <Helmet defaultTitle='Blog by Dan Siwiec' />
       {children()}
     </div>
   )
