@@ -27,7 +27,6 @@ export default props => {
       </h2>
       <p className='post__description'>{excerpt}</p>
       <TagList tags={tags} tagSlugs={tagSlugs} />
-      <Link className='post__readmore' to={slug}>Read</Link>
     </div>
   )
 }
