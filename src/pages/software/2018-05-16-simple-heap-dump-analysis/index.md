@@ -16,7 +16,7 @@ Recently, I was working with a Spring Boot application, written in Java 8, which
 There was a production incident reported, which suggested that one of the cached responses did not expire and became stale. To confirm this, one of the instances of the application was restarted, to flush out any state in it, after which it started behaving properly again. Specifically, the problematic interface is the following:
 
 ```java
-@Cacheable("mdm.findDepartmentByExternalId")
+@Cacheable("findDepartmentById")
 public Department findDepartmentById(String departmentId);
 ```
 
