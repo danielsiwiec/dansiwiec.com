@@ -10,11 +10,7 @@ script:
 deploy:
   provider: pages
   skip-cleanup: true
-  github-token: 9df09e930ad09bf59fa683dc1f1006d81a6bf655
+  github-token: $GITHUB_TOKEN
   local-dir: public
   on:
     branch: master
-
-cache:
-  directories:
-    - "node_modules"
