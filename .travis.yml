@@ -1,10 +1,10 @@
 language: node_js
 
-before_install:
+install:
   - npm i -g npm@6
+  - npm ci
 
 script:
-  - npm ci
   - npm run lint
 
 deploy:
