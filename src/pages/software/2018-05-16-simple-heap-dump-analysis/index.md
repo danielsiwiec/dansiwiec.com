@@ -11,7 +11,7 @@ title: Java Heap Dump analysis case study
 
 # So, what's going on?
 
-Recently, I was working with a Spring Boot application, written in Java 8, which makes use of the `@Cacheable` annotation to cache responses of some expensive calls to backend services.
+Recently, I was working with a Spring Boot application, written in Java 8, which makes use of the `@Cacheable` annotation to cache responses of some expensive calls to back-end services.
 
 There was a production incident reported, which suggested that one of the cached responses did not expire and became stale. To confirm this, one of the instances of the application was restarted, to flush out any state in it, after which it started behaving properly again. Specifically, the problematic interface is the following:
 
@@ -20,7 +20,7 @@ There was a production incident reported, which suggested that one of the cached
 public Department findDepartmentById(String departmentId);
 ```
 
-This makes each return value be stored inside a cache map, with the key being the `departmentId`. After a preconfigured time, the cache entry is evicted and the next call, will send an actual request to the backend service, which will be cached again.
+This stores each return value inside a cache map, with the key being the `departmentId`. After a pre-configured time, the cache entry is evicted and the next call, will send an actual request to the back-end service, which will be cached again.
 
 The objective was to take a heap dump of a *broken* instance and look inside, in hope of find a smoking gun around the cached responses stored in the cache map.
 
@@ -31,7 +31,7 @@ Per the Java [documentation](https://docs.oracle.com/javase/8/docs/technotes/gui
 > A heap dump is a snapshot of all the objects in the Java Virtual Machine (JVM) heap at a certain point in time. The JVM software allocates memory for objects from the heap for all class instances and arrays. The garbage collector reclaims the heap memory when an object is no longer needed and there are no references to the object. By examining the heap you can locate where objects are created and find the references to those objects in the source.
 
 # Obtaining the Heap dump
-There's a few ways to obtaint a heap dump of a Java application. We will look at two most common ones.
+There are a few ways to obtain a heap dump of a Java application. We will look at two most common ones.
 
 ## From a living process
 Since Java 6, a tool called **jmap** allows for capturing heap dumps from a running Java process. Here's how to use it:
@@ -52,7 +52,7 @@ jcmd <pid> GC.heap_dump <filename>
 Optionally, the JVM can automatically generate the heap dump in the event of an OutOfMemoryError crash, if the `-XX:+HeapDumpOnOutOfMemoryError` flag is passed to the JVM at startup.
 
 # Analyzing the heap dump
-Once you have the heap dump file, you want to perform an analysis on. Depending on what you're looking for, tools will differ. In our specific case, we want to inspect a particular instance of a cache entry and see what is being stored. For this we will use a simple, built-in tool, called **jhat**. We start it this way:
+Once you have the heap dump file, you're ready to analyze it. Depending on what you're looking for, tools will differ. In our case, we want to find a particular instance of a class (cache entry) and inspect it's state. For this we will use a simple, built-in tool, called **jhat**, which we can start like this:
 
 ```bash
 jhat <filename>
@@ -81,3 +81,5 @@ This gives us a list of results:
 Drilling into the object hierarchy, lets us eventually see the cached value and inspect it's properties:
 
 ![](jhat-object.png)
+
+You can get basic help with OQL at `http://localhost:7000/oqlhelp/`.
