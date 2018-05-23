@@ -40,7 +40,7 @@ exports.createPages = async ({ graphql, boundActionCreators }) => {
     throw new Error(result.errors)
   }
 
-  _.each(result.data.allMarkdownRemark.edges, (edge) => {
+  result.data.allMarkdownRemark.edges.forEach(edge => {
     if (_.get(edge, 'node.frontmatter.layout') === 'page') {
       createPage({
         path: edge.node.fields.slug,
@@ -60,7 +60,7 @@ exports.createPages = async ({ graphql, boundActionCreators }) => {
       }
 
       tags = _.uniq(tags)
-      _.each(tags, (tag) => {
+      tags.forEach(tag => {
         const tagPath = `/tags/${_.kebabCase(tag)}/`
         createPage({
           path: tagPath,
@@ -75,7 +75,7 @@ exports.createPages = async ({ graphql, boundActionCreators }) => {
       }
 
       categories = _.uniq(categories)
-      _.each(categories, (category) => {
+      categories.forEach(category => {
         const categoryPath = `/categories/${_.kebabCase(category)}/`
         createPage({
           path: categoryPath,
