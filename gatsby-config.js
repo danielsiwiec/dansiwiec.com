@@ -4,7 +4,7 @@ module.exports = {
     title: 'Blog by Dan Siwiec',
     subtitle: 'On things making me happy in life',
     copyright: '© All rights reserved.',
-    disqusShortname: '',
+    disqusShortname: 'dansiwiec',
     menu: [
       {
         label: 'Life',
