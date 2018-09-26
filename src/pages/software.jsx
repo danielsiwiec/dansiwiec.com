@@ -3,7 +3,6 @@ import Helmet from 'react-helmet'
 import { graphql } from 'gatsby'
 import Post from '../components/Post'
 import Sidebar from '../components/Sidebar'
-import Layout from '../components/Layout'
 
 export default props => {
   const items = []
@@ -14,20 +13,18 @@ export default props => {
   })
 
   return (
-    <Layout>
-      <div>
-        <Helmet>
-          <title>{title}</title>
-          <meta name='description' content={subtitle} />
-        </Helmet>
-        <Sidebar {...props} />
-        <div className='content'>
-          <div className='content__inner'>
-            {items}
-          </div>
+    <div>
+      <Helmet>
+        <title>{title}</title>
+        <meta name='description' content={subtitle} />
+      </Helmet>
+      <Sidebar {...props} />
+      <div className='content'>
+        <div className='content__inner'>
+          {items}
         </div>
       </div>
-    </Layout>
+    </div>
   )
 }
 

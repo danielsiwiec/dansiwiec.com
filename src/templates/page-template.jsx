@@ -2,7 +2,6 @@ import React from 'react'
 import Helmet from 'react-helmet'
 import { graphql } from 'gatsby'
 import PageTemplateDetails from '../components/PageTemplateDetails'
-import Layout from '../components/Layout'
 
 export default props => {
   const { title } = props.data.site.siteMetadata
@@ -11,15 +10,13 @@ export default props => {
   const excerpt = page.excerpt
 
   return (
-    <Layout>
-      <div>
-        <Helmet>
-          <title>{`${pageTitle} - ${title}`}</title>
-          <meta name='description' content={excerpt} />
-        </Helmet>
-        <PageTemplateDetails {...props} />
-      </div>
-    </Layout>
+    <div>
+      <Helmet>
+        <title>{`${pageTitle} - ${title}`}</title>
+        <meta name='description' content={excerpt} />
+      </Helmet>
+      <PageTemplateDetails {...props} />
+    </div>
   )
 }
 
