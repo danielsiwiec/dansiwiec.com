@@ -3,7 +3,7 @@ import Helmet from 'react-helmet'
 import { graphql } from 'gatsby'
 import Post from '../components/Post'
 import Sidebar from '../components/Sidebar'
-import Layout from '../components/layout'
+import Layout from '../components/Layout'
 
 export default props => {
   const items = []

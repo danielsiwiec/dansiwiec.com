@@ -2,7 +2,7 @@ import React from 'react'
 import Helmet from 'react-helmet'
 import { graphql } from 'gatsby'
 import Sidebar from '../components/Sidebar'
-import Layout from '../components/layout'
+import Layout from '../components/Layout'
 
 export default props => {
   const { title, subtitle } = props.data.site.siteMetadata

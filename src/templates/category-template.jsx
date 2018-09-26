@@ -3,7 +3,7 @@ import Helmet from 'react-helmet'
 import { graphql } from 'gatsby'
 import Sidebar from '../components/Sidebar'
 import CategoryTemplateDetails from '../components/CategoryTemplateDetails'
-import Layout from '../components/layout'
+import Layout from '../components/Layout'
 
 export default props => {
   const { title } = props.data.site.siteMetadata

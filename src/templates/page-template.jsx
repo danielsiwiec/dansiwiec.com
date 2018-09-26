@@ -2,7 +2,7 @@ import React from 'react'
 import Helmet from 'react-helmet'
 import { graphql } from 'gatsby'
 import PageTemplateDetails from '../components/PageTemplateDetails'
-import Layout from '../components/layout'
+import Layout from '../components/Layout'
 
 export default props => {
   const { title } = props.data.site.siteMetadata
