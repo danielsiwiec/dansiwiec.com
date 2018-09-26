@@ -37,7 +37,7 @@ export default props => {
 }
 
 export const pageQuery = graphql`
-  query TagsQuery {
+  query {
     site {
       siteMetadata {
         title

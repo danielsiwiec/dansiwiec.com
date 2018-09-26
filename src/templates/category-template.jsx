@@ -21,7 +21,7 @@ export default props => {
 }
 
 export const pageQuery = graphql`
-  query CategoryPage($category: String) {
+  query($category: String) {
     site {
       siteMetadata {
         title

@@ -18,7 +18,7 @@ export default props => {
 }
 
 export const pageQuery = graphql`
-  query TagPage($tag: String) {
+  query($tag: String) {
     site {
       siteMetadata {
         title

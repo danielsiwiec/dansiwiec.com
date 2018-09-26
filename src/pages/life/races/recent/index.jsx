@@ -35,7 +35,7 @@ const race = (date, title, slug) => {
 }
 
 export const pageQuery = graphql`
-  query RecentRacesQuery {
+  query {
     site {
       siteMetadata {
         title

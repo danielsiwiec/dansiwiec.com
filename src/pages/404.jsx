@@ -21,7 +21,7 @@ export default props => {
 }
 
 export const pageQuery = graphql`
-  query NotFoundQuery {
+  query {
     site {
       siteMetadata {
         title

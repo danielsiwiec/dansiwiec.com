@@ -32,7 +32,7 @@ export default props => {
 }
 
 export const pageQuery = graphql`
-  query SoftwareQuery {
+  query {
     site {
       siteMetadata {
         title

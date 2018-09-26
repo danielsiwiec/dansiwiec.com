@@ -24,7 +24,7 @@ export default props => {
 }
 
 export const pageQuery = graphql`
-  query IndexQuery {
+  query {
     site {
       siteMetadata {
         title
