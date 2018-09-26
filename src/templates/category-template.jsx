@@ -1,18 +1,22 @@
 import React from 'react'
 import Helmet from 'react-helmet'
+import { graphql } from 'gatsby'
 import Sidebar from '../components/Sidebar'
 import CategoryTemplateDetails from '../components/CategoryTemplateDetails'
+import Layout from '../components/layout'
 
 export default props => {
   const { title } = props.data.site.siteMetadata
   const { category } = props.pathContext
 
   return (
-    <div>
-      <Helmet title={`${category} - ${title}`} />
-      <Sidebar {...props} />
-      <CategoryTemplateDetails {...props} />
-    </div>
+    <Layout>
+      <div>
+        <Helmet title={`${category} - ${title}`} />
+        <Sidebar {...props} />
+        <CategoryTemplateDetails {...props} />
+      </div>
+    </Layout>
   )
 }
 

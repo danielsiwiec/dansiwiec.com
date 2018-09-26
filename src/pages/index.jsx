@@ -1,21 +1,25 @@
 import React from 'react'
 import Helmet from 'react-helmet'
+import { graphql } from 'gatsby'
 import Sidebar from '../components/Sidebar'
+import Layout from '../components/layout'
 
 export default props => {
   const { title, subtitle } = props.data.site.siteMetadata
 
   return (
-    <div>
-      <Helmet>
-        <title>{title}</title>
-        <meta name='description' content={subtitle} />
-      </Helmet>
-      <Sidebar {...props} />
-      <div className='content'>
-        <div className='content__inner' />
+    <Layout>
+      <div>
+        <Helmet>
+          <title>{title}</title>
+          <meta name='description' content={subtitle} />
+        </Helmet>
+        <Sidebar {...props} />
+        <div className='content'>
+          <div className='content__inner' />
+        </div>
       </div>
-    </div>
+    </Layout>
   )
 }
 

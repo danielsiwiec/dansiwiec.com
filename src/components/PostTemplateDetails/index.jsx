@@ -1,5 +1,6 @@
+import {kebabCase} from 'lodash'
 import React from 'react'
-import Link from 'gatsby-link'
+import {Link} from 'gatsby'
 import moment from 'moment'
 import Disqus from '../Disqus/Disqus'
 import TagList from '../TagList'
@@ -13,7 +14,7 @@ export default props => {
 
   const homeBlock = (
     <div>
-      <Link className='post-single__home-button' to={`/categories/${category}`}>All {category}</Link>
+      <Link className='post-single__home-button' to={`/categories/${kebabCase(category)}`}>All {category}</Link>
     </div>
   )
 

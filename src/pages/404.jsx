@@ -1,4 +1,5 @@
 import React from 'react'
+import { graphql } from 'gatsby'
 import Sidebar from '../components/Sidebar'
 
 export default props => {

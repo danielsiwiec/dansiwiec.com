@@ -1,12 +1,10 @@
 const _ = require('lodash')
 const path = require('path')
-const lost = require('lost')
-const pxtorem = require('postcss-pxtorem')
 const slash = require('slash')
 const { createFilePath } = require('gatsby-source-filesystem')
 
-exports.createPages = async ({ graphql, boundActionCreators }) => {
-  const { createPage } = boundActionCreators
+exports.createPages = async ({ graphql, actions }) => {
+  const { createPage } = actions
 
   const postTemplate = path.resolve('./src/templates/post-template.jsx')
   const pageTemplate = path.resolve('./src/templates/page-template.jsx')
@@ -87,8 +85,8 @@ exports.createPages = async ({ graphql, boundActionCreators }) => {
   })
 }
 
-exports.onCreateNode = ({ node, boundActionCreators, getNode }) => {
-  const { createNodeField } = boundActionCreators
+exports.onCreateNode = ({ node, actions, getNode }) => {
+  const { createNodeField } = actions
 
   if (node.internal.type === 'File') {
     const parsedFilePath = path.parse(node.absolutePath)
@@ -115,39 +113,4 @@ exports.onCreateNode = ({ node, boundActionCreators, getNode }) => {
       createNodeField({ node, name: 'categorySlug', value: categorySlug })
     }
   }
-}
-
-exports.modifyWebpackConfig = ({ config }) => {
-  config.merge({
-    postcss: [
-      lost(),
-      pxtorem({
-        rootValue: 16,
-        unitPrecision: 5,
-        propList: [
-          'font',
-          'font-size',
-          'line-height',
-          'letter-spacing',
-          'margin',
-          'margin-top',
-          'margin-left',
-          'margin-bottom',
-          'margin-right',
-          'padding',
-          'padding-top',
-          'padding-left',
-          'padding-bottom',
-          'padding-right',
-          'border-radius',
-          'width',
-          'max-width'
-        ],
-        selectorBlackList: [],
-        replace: true,
-        mediaQuery: false,
-        minPixelValue: 0
-      })
-    ]
-  })
 }

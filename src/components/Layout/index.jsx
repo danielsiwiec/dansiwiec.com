@@ -1,6 +1,6 @@
 import React from 'react'
 import Helmet from 'react-helmet'
-import '../assets/scss/init.scss'
+import '../../assets/scss/init.scss'
 import 'prismjs/themes/prism.css'
 
 export default props => {
@@ -9,7 +9,7 @@ export default props => {
   return (
     <div className='layout'>
       <Helmet defaultTitle='Blog by Dan Siwiec' />
-      {children()}
+      {children}
     </div>
   )
 }
