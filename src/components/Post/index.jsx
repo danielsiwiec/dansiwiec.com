@@ -25,8 +25,8 @@ export default props => {
       <h2 className='post__title'>
         <Link className='post__title-link' to={slug}>{title}</Link>
       </h2>
-      <p className='post__description'>{excerpt}</p>
       <TagList tags={tags} tagSlugs={tagSlugs} />
+      <p className='post__description'>{excerpt}</p>
     </div>
   )
 }

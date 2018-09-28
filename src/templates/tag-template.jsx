@@ -10,7 +10,7 @@ export default props => {
 
   return (
     <div>
-      <Helmet title={`All Posts tagged as "${tag}" - ${title}`} />
+      <Helmet title={`All Posts tagged as #${tag} - ${title}`} />
       <Sidebar {...props} />
       <TagTemplateDetails {...props} />
     </div>

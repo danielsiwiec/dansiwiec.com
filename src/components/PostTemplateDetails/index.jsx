@@ -30,14 +30,15 @@ export default props => {
       <div className='post-single'>
         <div className='post-single__inner'>
           <h1 className='post-single__title'>{post.frontmatter.title}</h1>
-          <div className='post-single__body' dangerouslySetInnerHTML={{ __html: post.html }} />
           <div className='post-single__date'>
+            <TagList tags={tags} tagSlugs={tagSlugs} />
             <em>Published {moment(post.frontmatter.date).format('D MMM YYYY')}</em>
           </div>
+          <hr />
+          <div className='post-single__body' dangerouslySetInnerHTML={{ __html: post.html }} />
         </div>
         <div className='post-single__footer'>
-          <TagList tags={tags} tagSlugs={tagSlugs} />
-          <hr />
+
           {commentsBlock}
         </div>
       </div>

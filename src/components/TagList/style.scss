@@ -10,7 +10,6 @@
             padding: 0;
             &-item {
                 display: inline-block;
-                margin: 10px 5px;
                 &-link {
                     background: $color-gray-bg;
                     text-decoration: none;
@@ -19,6 +18,7 @@
                     color: lighten($color-base, 20%);
                     line-height: $typographic-base-line-height;
                     padding: 8px 16px;
+                    font-size: 80%;
                     &:hover,
                     &:focus {
                         color: $color-base;

@@ -14,7 +14,7 @@ export default props => {
       <div className='content__inner'>
         <div className='page'>
           <h1 className='page__title'>
-              All Posts tagged as &quot;{tagTitle}&quot;
+              All Posts tagged as #{tagTitle}
           </h1>
           <div className='page__body'>
             {items}

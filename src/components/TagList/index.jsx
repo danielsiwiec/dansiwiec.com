@@ -9,7 +9,7 @@ export default ({tags, tagSlugs}) => {
         {tagSlugs && tagSlugs.map((slug, i) => (
           <li className='post-single__tags-list-item' key={slug}>
             <Link to={slug} className='post-single__tags-list-item-link'>
-              {tags[i]}
+              #{tags[i]}
             </Link>
           </li>
         ))}
