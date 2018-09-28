@@ -4,6 +4,7 @@ category: "Software"
 date: 2018-09-27
 tags:
 - aws
+- security
 title: "Case Study: Devastating work of a malicious GitHub bot"
 ---
 
