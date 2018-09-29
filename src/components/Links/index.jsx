@@ -1,6 +1,6 @@
 import React from 'react'
 import './style.scss'
-import '../../assets/fonts/fontello-771c82e0/css/fontello.css'
+import {FaGithub, FaLinkedinIn, FaInstagram, FaEnvelope} from 'react-icons/fa'
 
 export default props => {
   const author = props.data
@@ -16,22 +16,22 @@ export default props => {
       <ul className='links__list'>
         <li className='links__list-item'>
           <a href={`https://www.github.com/${links.github}`} target='_blank' rel='noopener noreferrer' >
-            <i className='icon-github' />
+            <FaGithub />
           </a>
         </li>
         <li className='links__list-item'>
           <a href={`https://www.linkedin.com/in/${links.linkedin}`} target='_blank' rel='noopener noreferrer' >
-            <i className='icon-linkedin' />
+            <FaLinkedinIn />
           </a>
         </li>
         <li className='links__list-item'>
           <a href={`https://www.instagram.com/${links.instagram}`} target='_blank' rel='noopener noreferrer' >
-            <i className='icon-instagram' />
+            <FaInstagram />
           </a>
         </li>
         <li className='links__list-item'>
           <a href={`mailto:${links.email}`}>
-            <i className='icon-mail' />
+            <FaEnvelope />
           </a>
         </li>
       </ul>

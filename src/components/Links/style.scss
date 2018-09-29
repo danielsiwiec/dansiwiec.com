@@ -19,13 +19,13 @@
             background: $color-gray-bg;
             & a {
                 border: 0;
-                & i {
-                    font-size: 14px;
+                & svg {
                     color: lighten($color-base, 20%);
+                    vertical-align: middle;
                 }
                 &:hover,
                 &:focus {
-                    & i {
+                    & svg {
                         color: $color-base;
                     }
                 }
