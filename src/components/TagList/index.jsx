@@ -4,11 +4,11 @@ import './style.scss'
 
 export default ({tags, tagSlugs}) => {
   return (
-    <div className='post-single__tags'>
-      <ul className='post-single__tags-list'>
+    <div className='tag-list'>
+      <ul className='tag-list__list'>
         {tagSlugs && tagSlugs.map((slug, i) => (
-          <li className='post-single__tags-list-item' key={slug}>
-            <Link to={slug} className='post-single__tags-list-item-link'>
+          <li className='tag-list__list-item' key={slug}>
+            <Link to={slug} className='tag-list__list-item-link'>
               #{tags[i]}
             </Link>
           </li>

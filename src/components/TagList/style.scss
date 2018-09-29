@@ -1,30 +1,28 @@
 @import "../../assets/scss/variables";
 @import "../../assets/scss/mixins";
 
-.post-single {
-    &__tags {
-        @include margin-bottom(.5);
-        &-list {
-            list-style: none;
-            margin: 0 -5px;
-            padding: 0;
-            &-item {
-                display: inline-block;
-                &-link {
-                    background: $color-gray-bg;
-                    text-decoration: none;
+.tag-list {
+    @include margin-bottom(.5);
+    &__list {
+        list-style: none;
+        margin: 0 -5px;
+        padding: 0;
+        &-item {
+            display: inline-block;
+            &-link {
+                background: $color-gray-bg;
+                text-decoration: none;
+                border: 0;
+                border-radius: 3px;
+                color: lighten($color-base, 20%);
+                line-height: $typographic-base-line-height;
+                padding: 8px 16px;
+                font-size: 80%;
+                &:hover,
+                &:focus {
+                    color: $color-base;
+                    background: darken($color-gray-bg, 5%);
                     border: 0;
-                    border-radius: 3px;
-                    color: lighten($color-base, 20%);
-                    line-height: $typographic-base-line-height;
-                    padding: 8px 16px;
-                    font-size: 80%;
-                    &:hover,
-                    &:focus {
-                        color: $color-base;
-                        background: darken($color-gray-bg, 5%);
-                        border: 0;
-                    }
                 }
             }
         }
