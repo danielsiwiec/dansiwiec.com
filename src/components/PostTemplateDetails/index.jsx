@@ -5,6 +5,7 @@ import moment from 'moment'
 import Disqus from '../Disqus/Disqus'
 import TagList from '../TagList'
 import './style.scss'
+import {FaClock} from 'react-icons/fa'
 
 export default props => {
   const post = props.data.markdownRemark
@@ -30,9 +31,14 @@ export default props => {
       <div className='post-single'>
         <div className='post-single__inner'>
           <h1 className='post-single__title'>{post.frontmatter.title}</h1>
-          <div className='post-single__date'>
+          <div className='post-single__readingtime'>
+            <em>Reading time {post.timeToRead} minutes</em>
+          </div>
+          <div className='post-single__tags'>
             <TagList tags={tags} tagSlugs={tagSlugs} />
-            <em>Published {moment(post.frontmatter.date).format('D MMM YYYY')}</em>
+          </div>
+          <div className='post-single__date'>
+            <em><FaClock /> {moment(post.frontmatter.date).format('MMMM D, YYYY')}</em>
           </div>
           <hr />
           <div className='post-single__body' dangerouslySetInnerHTML={{ __html: post.html }} />

@@ -47,6 +47,7 @@ export const pageQuery = graphql`
         category
       }
       excerpt
+      timeToRead
     }
   }
 `
