@@ -39,27 +39,29 @@ The IT team detects the malicious user and deletes it. From this point on, a lon
 # Impact
 
 ## Production downtime
-All production systems were impacted with downtime. Out of a total of 15 production applications, about a third was recovered on the same day, with the rest being unavailable for up to 3 days. The most problematic have been legacy services, in maintenance mode for more than a year, deployed manually. For some of them, the necessary skills were not present in the team anymore.
+All production systems were impacted with downtime. Out of a total of 15 production applications, about a third was recovered on the same day, with the rest being unavailable for up to 3 days. The most problematic had been legacy services, in maintenance mode for more than a year, deployed manually. For some of them, the necessary skills were not present in the team anymore.
 
 ## Sensitive data
-No sensitive data was compromised during the incident. Given the breath of the privileges captured by the malicious bot, it can be considered luck, rather than anything else. Likely, stealing data was not the attackers focus.
+No sensitive data had been compromised during the incident. Given the breath of the privileges captured by the malicious bot, it can be considered luck, rather than anything else. Likely, stealing data was not the attackers focus.
 
 ## Slowdown
-The incident caused a major disruption across all the teams, randomizing ongoing development and diverting resources towards analysis and recovery efforts. Additionally, for weeks to come, teams would be stumbling on some test services still not recovered after the incident. This would lower productivity for many weeks.
+The incident caused a major disruption across all the teams, randomizing ongoing development and diverting resources towards analysis and recovery efforts. Additionally, for weeks to come, teams would be stumbling on some components, like test services still not recovered after the incident. This would lower productivity for many weeks.
 
 # Lessons learned
 
 ## Embrace human error
-It is tempting to blame the individual who leaked the access keys to the wide internet, however it is not productive. Mistakes are in our nature and rather than wasting energy on trying to eliminate them, use this opportunity to establish guardrails, so it's easier to do the right things.
+It is tempting to put the blame on the individual who leaked the access keys to the wide internet, however it is not productive. Mistakes are in our nature and rather than wasting energy on trying to eliminate them or find the scape goat, use the time to establish solid guardrails. We, developers, are like ants - we look for the path of least resistance and follow it, so make it easier to do the right thing and incidents will be less likely.
 
 ## Least privilege principle
-While I'm not a fan of overly focusing on preventive measures, as they tend to result in point solutions - disproportionately favoring the case at hand, which over time result in over complex systems. However, there are well established security patterns, which should be followed. One of them is the 'Principle of Least Privilege', which requires that users and services can access only the resources they absolutely need.
+I'm not a fan of overly focusing on preventive measures, as they tend to result in point solutions - disproportionately favoring the case at hand, which over time results in over complex systems. However, there are well established security patterns, which should be followed. One of them is the 'Principle of Least Privilege', which requires that users and services can access only the resources they absolutely need.
 
 ## Fire drills
-Prevention, while a good driver for constant improvement, will never fully eliminate incidents. Therefore, prioritizing Mean Time to Repair (MTTR) over Mean Time Between Failures (MTBF) yields better results. Employing tools like Chaos Monkeys on a daily basis or holding annual 'war games', where various attack scenarios can be played will help this cause. Be sure to include all the services, especially the legacy ones. This is also a good opportunity to evolve and document recovery processes and ensure proper communication channels within the organization are readily available.
+Prevention, while a good driver for constant improvement, will never fully eliminate incidents. Assuming that something will eventually go wrong (and it will!), you give yourself the mindspace to think about recovery as your first class operations tool, rather than a plan B. Prioritizing improvement of Mean Time to Repair (MTTR) over Mean Time Between Failures (MTBF) yields therefore better results.
+
+For extra points, employ tools like Chaos Monkeys or hold periodic 'war games', where various attack scenarios can be exercised. This is also a good opportunity to evolve and document recovery processes and ensure proper communication channels within the organization are readily available. Be sure to include all the services, especially the legacy ones.
 
 ## Legacy services
-Adopt a more aggressive strategy towards legacy services. Either spent the effort to phase them out completely or invest in automation. Being in a state of limbo - little automation or monitoring around old services and lack of solid plan for sun setting is common and puts the organizations at a very vulnerable position.
+Adopt a more aggressive strategy towards legacy services. Either spend the effort to phase them out completely or invest in automation and monitoring. Being in limbo with old services - low operational maturity, as well as lack of a solid plan for sun setting is common and puts the organizations at a very vulnerable position.
 
 ## Ensure complete recovery
-Naturally production apps, impacting real users take priority when performing recovery. Reaching 'green' state for all the production services is however not sufficient. It's important to recover all components of the ecosystem, that participate in the full development cycle. Think test services, CI agent pools, build monitors, etc. Without this work being prioritized, team's productivity will be taking unexpected hits over many weeks to come.
+Naturally, production apps impacting real users take priority when performing a recovery. Reaching 'green' state for all the production services is however not sufficient. It's important to recover all components of the ecosystem, that participate in the end to end development cycle. Think test services, CI agent pools, build monitors, etc. Without this work being prioritized, team's productivity will be taking unexpected hits over many weeks to come.
