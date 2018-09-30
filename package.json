@@ -4,7 +4,7 @@
   "description": "Dan Siwiec personal website",
   "main": "n/a",
   "scripts": {
-    "dev": "gatsby develop",
+    "dev": "gatsby develop -p 8001",
     "build": "gatsby build --prefix-paths",
     "clean": "rm -rf public && rm -rf .cache",
     "lint": "standard",
