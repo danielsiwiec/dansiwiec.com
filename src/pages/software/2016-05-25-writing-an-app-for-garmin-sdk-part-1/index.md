@@ -7,6 +7,7 @@ tags:
 - iot
 - monkeyc
 title: Creating a Garmin Connect IQ application. Part 1 - Hello Monkey C!
+excerpt: "This is a step-by-step guide to writing Garmin Connect IQ applications."
 ---
 
 # Intro

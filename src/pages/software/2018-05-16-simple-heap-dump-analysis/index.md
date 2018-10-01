@@ -7,6 +7,7 @@ tags:
 - debugging
 - caching
 title: Java Heap Dump analysis case study
+excerpt: "Read this short crash course for analyzing Java Heap Dumps with Java's built-in tool - jhat"
 ---
 
 # So, what's going on?

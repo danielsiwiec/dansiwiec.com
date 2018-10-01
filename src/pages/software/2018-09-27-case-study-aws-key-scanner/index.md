@@ -5,6 +5,7 @@ date: 2018-09-27
 tags:
 - aws
 - security
+excerpt: "Most of us heard about bots scanning GitHub for AWS access keys. Read how in one organization leaked keys caused mayhem in a matter of minutes."
 title: "Case Study: Devastating work of a malicious GitHub bot"
 ---
 
