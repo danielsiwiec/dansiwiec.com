@@ -7,6 +7,9 @@ tags:
 - security
 excerpt: "Most of us heard about bots scanning GitHub for AWS access keys. Read how in one organization leaked keys caused mayhem in a matter of minutes."
 title: "Case Study: Devastating work of a malicious GitHub bot"
+cover:
+    image: craig-sybert-774140-unsplash.jpg
+    text: Photo by Craig Sybert on Unsplash
 ---
 
 A while back I was working for a mid-size client who used AWS as their infrastructure provider. For a long time, there had been little governance over the AWS account, with development teams having full access to the account functions and often provisioning their applications manually. As the cumulative ecosystem of the organization grew to around 300 EC2 instances, manual provisioning was being gradually phased out across teams in favor of automation, thanks to services like CloudFormation, Elastic Beanstalk and Ansible, however originally set privileges remained still in place.
