@@ -7,6 +7,9 @@ tags:
 - regex
 title: Multi-line file find and replace
 excerpt: "How many times did you google how to do this? Look no more :) Leaving this here as much for anyone as for future self :)"
+cover:
+    image: joao-silas-72563-unsplash.jpg
+    text: Photo by João Silas on Unsplash
 ---
 
 Working with source files, you might occasionally find yourself needing to perform a good, old find-and-replace on all the files in your source code. If you're like me, you're likely too lazy to do it manually on each file. Often, the IDE you're working in will have this feature built-in, however, sometimes the feature is limited to a single line match, which doesn't always cut it. Additionally, if you're like me, each time you actually figure out how to do it, you forget almost the next day. Was it sed or awk that I used?
