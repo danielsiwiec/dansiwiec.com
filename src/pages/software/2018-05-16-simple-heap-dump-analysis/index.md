@@ -8,6 +8,9 @@ tags:
 - caching
 title: Java Heap Dump analysis case study
 excerpt: "Read this short crash course for analyzing Java Heap Dumps with Java's built-in tool - jhat"
+cover:
+    image: rawpixel-718365-unsplash.jpg
+    text: Photo by rawpixel on Unsplash
 ---
 
 # So, what's going on?
