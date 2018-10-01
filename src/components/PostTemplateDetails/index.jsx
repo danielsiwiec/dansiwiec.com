@@ -6,6 +6,7 @@ import Disqus from '../Disqus/Disqus'
 import TagList from '../TagList'
 import './style.scss'
 import {FaClock} from 'react-icons/fa'
+import Img from 'gatsby-image'
 
 export default props => {
   const post = props.data.markdownRemark
@@ -25,10 +26,16 @@ export default props => {
     </div>
   )
 
+  const cover = post.frontmatter.cover
+  const coverBlock = cover
+    ? <Img fluid={cover.image.childImageSharp.fluid} title={cover.text} />
+    : undefined
+
   return (
     <div>
       {homeBlock}
       <div className='post-single'>
+        {coverBlock}
         <div className='post-single__inner'>
           <h1 className='post-single__title'>{post.frontmatter.title}</h1>
           <div className='post-single__readingtime'>

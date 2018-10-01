@@ -45,6 +45,16 @@ export const pageQuery = graphql`
         tags
         date
         category
+        cover {
+          image {
+            childImageSharp {
+              fluid {
+                ...GatsbyImageSharpFluid
+              }
+            }
+          }
+          text
+        }
       }
       excerpt
       timeToRead
