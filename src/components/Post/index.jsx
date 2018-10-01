@@ -6,7 +6,7 @@ import TagList from '../TagList'
 
 export default props => {
   const { title, date, category, tags } = props.data.node.frontmatter
-  const excerpt = props.data.node.excerpt
+  const excerpt = props.data.node.frontmatter.excerpt || props.data.node.excerpt
   const { slug, categorySlug, tagSlugs } = props.data.node.fields
 
   return (

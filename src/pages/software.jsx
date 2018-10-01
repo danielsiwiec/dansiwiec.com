@@ -66,6 +66,7 @@ export const pageQuery = graphql`
             date
             category
             tags
+            excerpt
           }
           excerpt
         }
