@@ -3,6 +3,7 @@ import {Link} from 'gatsby'
 import moment from 'moment'
 import './style.scss'
 import TagList from '../TagList'
+import CategoryLink from '../CategoryLink'
 
 export default props => {
   const { title, date, category, tags } = props.data.node.frontmatter
@@ -16,11 +17,7 @@ export default props => {
           {moment(date).format('MMMM YYYY')}
         </time>
         <span className='post__meta-divider' />
-        <span className='post__meta-category' key={categorySlug}>
-          <Link to={categorySlug} className='post__meta-category-link'>
-            {category}
-          </Link>
-        </span>
+        <CategoryLink category={category} slug={categorySlug} />
       </div>
       <h2 className='post__title'>
         <Link className='post__title-link' to={slug}>{title}</Link>

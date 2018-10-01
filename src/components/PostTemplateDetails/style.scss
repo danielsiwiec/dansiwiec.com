@@ -74,6 +74,9 @@
         margin-right: auto;
         padding: 10px 0;
     }
+    &__category-link {
+        text-align: center;
+    }
     &__date {
         text-align: center;
         max-width: $layout-post-single-width;
