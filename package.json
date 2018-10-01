@@ -6,6 +6,7 @@
   "scripts": {
     "dev": "gatsby develop -p 8001",
     "build": "gatsby build --prefix-paths",
+    "prebuild": "npm run clean",
     "clean": "rm -rf public && rm -rf .cache",
     "lint": "standard",
     "test": "echo \"Error: no test specified\" && exit 1",
