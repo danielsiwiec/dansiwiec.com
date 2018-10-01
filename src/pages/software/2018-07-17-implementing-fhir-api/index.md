@@ -10,6 +10,9 @@ tags:
 - rest
 title: Implementing a FHIR healthcare API
 excerpt: "After decades of complex and unstable healthcare standards for data exchange, there's finally a break in the clouds. Learn about my experiences from implementing FHIR - a new HL7 standard and challenges I've encountered"
+cover:
+    image: rawpixel-645295-unsplash.jpg
+    text: Photo by rawpixel on Unsplash
 ---
 
 I've spent the last 10 months working with a major healthcare company in the US, helping rewrite their API platform, to conform with a new healthcare standard - FHIR. Here's some of the observations I've made over the course of this time, regarding this standard and it's implementation.
