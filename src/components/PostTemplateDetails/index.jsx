@@ -1,6 +1,7 @@
 import React from 'react'
 import moment from 'moment'
 import Img from 'gatsby-image'
+import {Link} from 'gatsby'
 import {FaClock} from 'react-icons/fa'
 import Disqus from '../Disqus/Disqus'
 import TagList from '../TagList'
@@ -25,10 +26,16 @@ export default props => {
     ? <Img fluid={cover.image.childImageSharp.fluid} title={cover.text} />
     : undefined
 
+  const homeButton = (
+    <div className='post-single__home-button'>
+      <Link to='/' className='post-single__home-button__link'>Home</Link>
+    </div>)
+
   return (
     <div>
       <div className='post-single'>
         {coverBlock}
+        {homeButton}
         <div className='post-single__inner'>
           <h1 className='post-single__title'>{post.frontmatter.title}</h1>
           <div className='post-single__category-link'>
