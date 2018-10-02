@@ -6,4 +6,7 @@ tags:
 draft: true
 title: Just a file to provide schema
 excerpt: ""
+cover:
+    image: ""
+    text: ""
 ---
