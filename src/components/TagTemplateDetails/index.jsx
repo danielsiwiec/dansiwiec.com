@@ -4,7 +4,7 @@ import Post from '../Post'
 export default props => {
   const items = []
   const tagTitle = props.pathContext.tag
-  const posts = props.data.allMarkdownRemark.edges
+  const posts = (props.data.allMarkdownRemark && props.data.allMarkdownRemark.edges) || []
   posts.forEach((post) => {
     items.push(<Post data={post} key={post.node.fields.slug} />)
   })
