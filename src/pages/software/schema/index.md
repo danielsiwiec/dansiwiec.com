@@ -7,6 +7,6 @@ draft: true
 title: Just a file to provide schema
 excerpt: ""
 cover:
-    image: ""
-    text: ""
+    image: rieke-t-bo-785310-unsplash.jpg
+    text: "Photo by Rieke T-bo on Unsplash"
 ---
