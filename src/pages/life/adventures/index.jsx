@@ -4,6 +4,7 @@ import chunk from 'lodash/chunk'
 import { graphql } from 'gatsby'
 import Img from 'gatsby-image'
 import Sidebar from '../../../components/Sidebar'
+import './style.scss'
 
 const INITIAL_COUNT = 2
 
@@ -64,7 +65,9 @@ class Adventuregram extends React.Component {
                   <div key={n}>
                     <h2>{node.frontmatter.title} {moment(node.frontmatter.date).format('MMM YYYY')}</h2>
                     {node.frontmatter.pics.map((pic, p) => (
-                      <Img key={p} fluid={pic.childImageSharp.fluid} title='blah' />
+                      <div className='adventure-image' key={p}>
+                        <Img fluid={pic.childImageSharp.fluid} title='blah' />
+                      </div>
                     ))}
                   </div>
                 ))}
