@@ -3,6 +3,9 @@ title: "Life"
 layout: page
 ---
 
+### Adventures
+Bushwacking, world trotting, hiking, trouble making - you name it! Here's some memorable [adventures](adventures).
+
 ### Races
 Come to join or cheer me on at my [upcoming races](races/upcoming)! Also, check out some of my [recent starts](races/recent)
 
@@ -13,9 +16,6 @@ I swim at the Aquatic park, in the San Francisco Bay, usually early mornings or 
 I enjoy long, solitary trips. Just the bike and tens of miles of spectacular Bay Area landscapes. Check out some of them [here](biking/trips).
 
 Take a peek at [bikes](biking/bikes) I'm riding.
-
-### Adventures
-Backpacking, camping, bushwacking, world-trotting - you name it! Here's some memorable [escapades](adventures).
 
 ### CrossFit
 I recently started training [here](http://sanfranciscocrossfit.com/). Great space and friendly people!
