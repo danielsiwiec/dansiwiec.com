@@ -5,7 +5,7 @@ import { graphql } from 'gatsby'
 import Img from 'gatsby-image'
 import Sidebar from '../../../components/Sidebar'
 
-const INITIAL_COUNT = 3
+const INITIAL_COUNT = 2
 
 // This would normally be in a Redux store or some other global data store.
 if (typeof window !== `undefined`) {
@@ -28,7 +28,7 @@ class Adventuregram extends React.Component {
       document.documentElement.offsetHeight -
       (window.scrollY + window.innerHeight)
     if (distanceToBottom < 100) {
-      this.setState({ adventuresToShow: this.state.adventuresToShow + INITIAL_COUNT })
+      this.setState({ adventuresToShow: this.state.adventuresToShow + 1 })
     }
     this.ticking = false
   }
@@ -57,6 +57,7 @@ class Adventuregram extends React.Component {
         <Sidebar {...this.props} />
         <div className='content'>
           <div className='content__inner'>
+            <h1>Adventures</h1>
             {chunk(adventures.slice(0, this.state.adventuresToShow), 3).map((chunk, c) => (
               <div key={c}>
                 {chunk.map((node, n) => (
