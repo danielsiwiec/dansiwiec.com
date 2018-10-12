@@ -1,6 +1,6 @@
 ---
 category: adventures
-title: Yukon, YK, Canada
+title: Yukon, YT, Canada
 date: 2018-07-03
 pics:
 - DSC00544.JPG
