@@ -5,11 +5,11 @@ import './style.scss'
 export default class Collapsing extends React.Component {
   constructor (props) {
     super(props)
-    this.state = {open: false}
-  }
-
-  componentDidMount () {
-    this.setState({open: window.location.pathname.includes(this.props.path)})
+    let open = false
+    if (typeof window !== `undefined`) {
+      open = window.location.pathname.includes(props.path)
+    }
+    this.state = {open}
   }
 
   render () {

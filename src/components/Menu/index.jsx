@@ -16,7 +16,7 @@ const link = item => {
 const collapsingSubmenu = item => {
   return (
     <Collapsing className='menu__list-item-link' activeClassName='menu__list-item-link menu__list-item-link--active'
-      label={item.label} root={item.path}>
+      label={item.label} path={item.path}>
       <ul className='menu__list'>
         {item.subs.map(sub => (
           <li className='menu__list-item' key={sub.path}>
