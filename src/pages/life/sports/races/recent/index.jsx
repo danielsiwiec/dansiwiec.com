@@ -1,8 +1,8 @@
 import React from 'react'
 import Helmet from 'react-helmet'
 import {Link, graphql} from 'gatsby'
-import Sidebar from '../../../../components/Sidebar'
 import moment from 'moment'
+import Sidebar from '../../../../../components/Sidebar'
 
 export default (props) => {
   const { title, subtitle } = props.data.site.siteMetadata
@@ -44,6 +44,10 @@ export const pageQuery = graphql`
         menu {
           label
           path
+          subs {
+            path
+            label
+          }
         }
         author {
           name

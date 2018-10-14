@@ -58,7 +58,8 @@ class Adventuregram extends React.Component {
         <Sidebar {...this.props} />
         <div className='content'>
           <div className='content__inner'>
-            <h1>Adventures</h1>
+            <h1 className='page__title'>Adventures</h1>
+            Bushwacking, world trotting, hiking, trouble making - you name it!
             {chunk(adventures.slice(0, this.state.adventuresToShow), 3).map((chunk, c) => (
               <div key={c}>
                 {chunk.map((node, n) => (
@@ -109,6 +110,10 @@ export const pageQuery = graphql`
           menu {
             label
             path
+            subs {
+              path
+              label
+            }
           }
           author {
             name

@@ -27,6 +27,10 @@ export const pageQuery = graphql`
         menu {
           label
           path
+          subs {
+            path
+            label
+          }
         }
         author {
           name

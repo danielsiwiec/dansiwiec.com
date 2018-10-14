@@ -11,7 +11,21 @@ module.exports = {
     menu: [
       {
         label: 'Life',
-        path: '/life/'
+        path: '/life/',
+        subs: [
+          {
+            label: 'Adventures',
+            path: '/life/adventures'
+          },
+          {
+            label: 'Sports',
+            path: '/life/sports'
+          },
+          {
+            label: 'Brrr!!!',
+            path: '/life/cold'
+          }
+        ]
       },
       {
         label: 'Work',
