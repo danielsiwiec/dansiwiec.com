@@ -1,6 +1,6 @@
 import React from 'react'
 import moment from 'moment'
-// import Img from 'gatsby-image'
+import Img from 'gatsby-image'
 import {Link} from 'gatsby'
 import {FaClock} from 'react-icons/fa'
 import Disqus from '../Disqus/Disqus'
@@ -21,10 +21,10 @@ export default props => {
     </div>
   )
 
-  // const cover = post.frontmatter.cover
-  // const coverBlock = cover
-  //   ? <Img fluid={cover.image.childImageSharp.fluid} title={cover.text} />
-  //   : undefined
+  const cover = post.frontmatter.cover
+  const coverBlock = cover
+    ? <Img fluid={cover.image.childImageSharp.fluid} title={cover.text} />
+    : undefined
 
   const homeButton = (
     <div className='post-single__home-button'>
@@ -34,7 +34,7 @@ export default props => {
   return (
     <div>
       <div className='post-single'>
-        {/* {coverBlock} */}
+        {coverBlock}
         {homeButton}
         <div className='post-single__inner'>
           <h1 className='post-single__title'>{post.frontmatter.title}</h1>

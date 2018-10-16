@@ -1,10 +1,11 @@
 import React from 'react'
 import { graphql } from 'gatsby'
+import Layout from '../components/Layout'
 import Sidebar from '../components/Sidebar'
 
 export default props => {
   return (
-    <div>
+    <Layout {...props}>
       <Sidebar {...props} />
       <div className='content'>
         <div className='content__inner'>
@@ -16,7 +17,7 @@ export default props => {
           </div>
         </div>
       </div>
-    </div>
+    </Layout>
   )
 }
 

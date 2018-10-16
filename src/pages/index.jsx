@@ -1,13 +1,14 @@
 import React from 'react'
 import Helmet from 'react-helmet'
 import { graphql } from 'gatsby'
+import Layout from '../components/Layout'
 import Sidebar from '../components/Sidebar'
 
 export default props => {
   const { title, subtitle } = props.data.site.siteMetadata
 
   return (
-    <div>
+    <Layout {...props}>
       <Helmet>
         <title>{title}</title>
         <meta name='description' content={subtitle} />
@@ -16,7 +17,7 @@ export default props => {
       <div className='content'>
         <div className='content__inner' />
       </div>
-    </div>
+    </Layout>
   )
 }
 

@@ -1,6 +1,7 @@
 import React from 'react'
 import Helmet from 'react-helmet'
 import { graphql } from 'gatsby'
+import Layout from '../components/Layout'
 import Sidebar from '../components/Sidebar'
 import CategoryTemplateDetails from '../components/CategoryTemplateDetails'
 
@@ -9,11 +10,11 @@ export default props => {
   const { category } = props.pathContext
 
   return (
-    <div>
+    <Layout {...props}>
       <Helmet title={`${category} - ${title}`} />
       <Sidebar {...props} />
       <CategoryTemplateDetails {...props} />
-    </div>
+    </Layout>
   )
 }
 

@@ -2,6 +2,7 @@ import React from 'react'
 import {Link, graphql} from 'gatsby'
 import Helmet from 'react-helmet'
 import kebabCase from 'lodash/kebabCase'
+import Layout from '../components/Layout'
 import Sidebar from '../components/Sidebar'
 
 export default props => {
@@ -9,7 +10,7 @@ export default props => {
   const categories = props.data.allMarkdownRemark.group
 
   return (
-    <div>
+    <Layout {...props}>
       <Helmet title={`All Categories - ${title}`} />
       <Sidebar {...props} />
       <div className='content'>
@@ -32,7 +33,7 @@ export default props => {
           </div>
         </div>
       </div>
-    </div>
+    </Layout>
   )
 }
 

@@ -1,5 +1,6 @@
 import React from 'react'
 import Helmet from 'react-helmet'
+import Layout from '../components/Layout'
 import { graphql } from 'gatsby'
 import PostTemplateDetails from '../components/PostTemplateDetails'
 
@@ -10,13 +11,13 @@ export default props => {
   const excerpt = post.excerpt
 
   return (
-    <div>
+    <Layout {...props}>
       <Helmet>
         <title>{`${postTitle} - ${title}`}</title>
         <meta name='description' content={excerpt} />
       </Helmet>
       <PostTemplateDetails {...props} />
-    </div>
+    </Layout>
   )
 }
 

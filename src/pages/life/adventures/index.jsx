@@ -3,6 +3,7 @@ import moment from 'moment'
 import chunk from 'lodash/chunk'
 import { graphql } from 'gatsby'
 import Img from 'gatsby-image'
+import Layout from '../../../components/Layout'
 import Sidebar from '../../../components/Sidebar'
 import './style.scss'
 
@@ -54,7 +55,7 @@ class Adventuregram extends React.Component {
     let adventures = this.props.data.allMarkdownRemark.edges.map(e => e.node)
 
     return (
-      <div>
+      <Layout {...this.props}>
         <Sidebar {...this.props} />
         <div className='content'>
           <div className='content__inner'>
@@ -76,7 +77,7 @@ class Adventuregram extends React.Component {
             ))}
           </div>
         </div>
-      </div>
+      </Layout>
     )
   }
 }

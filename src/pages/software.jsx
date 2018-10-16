@@ -1,6 +1,7 @@
 import React from 'react'
 import Helmet from 'react-helmet'
 import { graphql } from 'gatsby'
+import Layout from '../components/Layout'
 import Post from '../components/Post'
 import Sidebar from '../components/Sidebar'
 
@@ -13,7 +14,7 @@ export default props => {
   })
 
   return (
-    <div>
+    <Layout {...props}>
       <Helmet>
         <title>{title}</title>
         <meta name='description' content={subtitle} />
@@ -24,7 +25,7 @@ export default props => {
           {items}
         </div>
       </div>
-    </div>
+    </Layout>
   )
 }
 

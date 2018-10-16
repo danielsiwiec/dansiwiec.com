@@ -2,6 +2,7 @@ import React from 'react'
 import Helmet from 'react-helmet'
 import {Link, graphql} from 'gatsby'
 import moment from 'moment'
+import Layout from '../../../../../components/Layout'
 import Sidebar from '../../../../../components/Sidebar'
 
 export default (props) => {
@@ -12,7 +13,7 @@ export default (props) => {
   })
 
   return (
-    <div>
+    <Layout {...props}>
       <Helmet>
         <title>{title}</title>
         <meta name='description' content={subtitle} />
@@ -26,7 +27,7 @@ export default (props) => {
           </ul>
         </div>
       </div>
-    </div>
+    </Layout>
   )
 }
 
