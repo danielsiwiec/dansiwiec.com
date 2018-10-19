@@ -36,6 +36,15 @@
                 }
             }
         }
+        & blockquote {
+            & p {
+                border-top: 1px solid black;
+                padding: 20px;
+                border-bottom: 1px solid black;
+                font-weight: bold;
+                font-size: 1.4rem
+            }
+        }
         & a {
             text-decoration: underline;
         }
