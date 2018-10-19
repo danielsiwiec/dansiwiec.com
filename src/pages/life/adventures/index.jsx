@@ -1,81 +1,30 @@
 import React from 'react'
-import chunk from 'lodash/chunk'
 import { graphql } from 'gatsby'
 import Layout from '../../../components/Layout'
 import Sidebar from '../../../components/Sidebar'
 import Adventure from '../../../components/Adventure'
+import InfiniteScroll from '../../../components/InfiniteScroll'
 
-const INITIAL_COUNT = 2
+export default props => {
+  let adventures = props.data.allMarkdownRemark.edges
 
-// This would normally be in a Redux store or some other global data store.
-if (typeof window !== `undefined`) {
-  window.adventuresToShow = INITIAL_COUNT
-}
-
-class Adventuregram extends React.Component {
-  constructor (props) {
-    super(props)
-    let adventuresToShow = INITIAL_COUNT
-    if (typeof window !== `undefined`) {
-      adventuresToShow = window.adventuresToShow
-    }
-
-    this.state = { adventuresToShow }
-  }
-
-  update () {
-    const distanceToBottom =
-      document.documentElement.offsetHeight -
-      (window.scrollY + window.innerHeight)
-    if (distanceToBottom < 100) {
-      this.setState({ adventuresToShow: this.state.adventuresToShow + 1 })
-    }
-    this.ticking = false
-  }
-
-  handleScroll = () => {
-    if (!this.ticking) {
-      this.ticking = true
-      requestAnimationFrame(() => this.update()) // eslint-disable-line no-undef
-    }
-  }
-
-  componentDidMount () {
-    window.addEventListener(`scroll`, this.handleScroll)
-  }
-
-  componentWillUnmount () {
-    window.removeEventListener(`scroll`, this.handleScroll)
-    window.adventuresToShow = this.state.adventuresToShow
-  }
-
-  render () {
-    let adventures = this.props.data.allMarkdownRemark.edges.map(e => e.node)
-
-    return (
-      <Layout {...this.props}>
-        <Sidebar {...this.props} />
-        <div className='content'>
-          <div className='content__inner'>
-            <h1 className='page__title'>Adventures</h1>
+  return (
+    <Layout {...props}>
+      <Sidebar {...props} />
+      <div className='content'>
+        <div className='content__inner'>
+          <h1 className='page__title'>Adventures</h1>
             Bushwacking, world trotting, hiking, trouble making - you name it!
-            <div>
-              {chunk(adventures.slice(0, this.state.adventuresToShow), 3).map((chunk, c) => (
-                <div key={c}>
-                  {chunk.map((node, n) => (
-                    <Adventure key={n} adventure={node.frontmatter} />
-                  ))}
-                </div>
-              ))}
-            </div>
-          </div>
+          <InfiniteScroll items={adventures} sectionFactory={section} />
         </div>
-      </Layout>
-    )
-  }
+      </div>
+    </Layout>
+  )
 }
 
-export default Adventuregram
+const section = (item, index) => {
+  return <Adventure key={index} adventure={item.node.frontmatter} />
+}
 
 export const pageQuery = graphql`
   query {
