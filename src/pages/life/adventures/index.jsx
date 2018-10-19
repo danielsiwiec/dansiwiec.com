@@ -1,11 +1,9 @@
 import React from 'react'
-import moment from 'moment'
 import chunk from 'lodash/chunk'
 import { graphql } from 'gatsby'
-import Img from 'gatsby-image'
 import Layout from '../../../components/Layout'
 import Sidebar from '../../../components/Sidebar'
-import './style.scss'
+import Adventure from '../../../components/Adventure'
 
 const INITIAL_COUNT = 2
 
@@ -61,20 +59,15 @@ class Adventuregram extends React.Component {
           <div className='content__inner'>
             <h1 className='page__title'>Adventures</h1>
             Bushwacking, world trotting, hiking, trouble making - you name it!
-            {chunk(adventures.slice(0, this.state.adventuresToShow), 3).map((chunk, c) => (
-              <div key={c}>
-                {chunk.map((node, n) => (
-                  <div key={n}>
-                    <h2>{node.frontmatter.title} {moment(node.frontmatter.date).format('MMM YYYY')}</h2>
-                    {node.frontmatter.pics.map((pic, p) => (
-                      <div className='adventure-image' key={p}>
-                        <Img fluid={pic.childImageSharp.fluid} title='blah' />
-                      </div>
-                    ))}
-                  </div>
-                ))}
-              </div>
-            ))}
+            <div>
+              {chunk(adventures.slice(0, this.state.adventuresToShow), 3).map((chunk, c) => (
+                <div key={c}>
+                  {chunk.map((node, n) => (
+                    <Adventure key={n} adventure={node.frontmatter} />
+                  ))}
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </Layout>
