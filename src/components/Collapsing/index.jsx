@@ -9,7 +9,7 @@ export default class Collapsing extends React.Component {
     if (typeof window !== `undefined`) {
       open = window.location.pathname.includes(props.path)
     }
-    this.state = {open}
+    this.state = { open }
   }
 
   render () {

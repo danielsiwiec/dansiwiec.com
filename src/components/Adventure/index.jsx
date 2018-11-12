@@ -3,7 +3,7 @@ import moment from 'moment'
 import Img from 'gatsby-image'
 import './style.scss'
 
-export default ({adventure: {title, date, pics}}) => {
+export default ({ adventure: { title, date, pics } }) => {
   return (
     <div>
       <h2>{title} {moment(date).format('MMM YYYY')}</h2>

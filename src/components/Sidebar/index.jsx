@@ -1,5 +1,5 @@
 import React from 'react'
-import {Link} from 'gatsby'
+import { Link } from 'gatsby'
 import Menu from '../Menu'
 import Links from '../Links'
 import './style.scss'

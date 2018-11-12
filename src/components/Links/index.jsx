@@ -1,6 +1,6 @@
 import React from 'react'
 import './style.scss'
-import {FaGithub, FaLinkedinIn, FaInstagram, FaEnvelope} from 'react-icons/fa'
+import { FaGithub, FaLinkedinIn, FaInstagram, FaEnvelope } from 'react-icons/fa'
 
 export default props => {
   const author = props.data

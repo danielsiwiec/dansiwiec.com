@@ -1,5 +1,5 @@
 import React from 'react'
-import {Link} from 'gatsby'
+import { Link } from 'gatsby'
 import moment from 'moment'
 import './style.scss'
 import TagList from '../TagList'

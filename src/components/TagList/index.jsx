@@ -1,8 +1,8 @@
 import React from 'react'
-import {Link} from 'gatsby'
+import { Link } from 'gatsby'
 import './style.scss'
 
-export default ({tags, tagSlugs}) => {
+export default ({ tags, tagSlugs }) => {
   return (
     <div className='tag-list'>
       <ul className='tag-list__list'>
