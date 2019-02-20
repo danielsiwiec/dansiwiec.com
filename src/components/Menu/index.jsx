@@ -2,15 +2,23 @@ import React from 'react'
 import { Link } from 'gatsby'
 import Collapsing from '../Collapsing'
 import './style.scss'
+import { FaExternalLinkAlt } from 'react-icons/fa'
 
 const link = item => {
-  return (<Link
-    to={item.path}
-    className='menu__list-item-link'
-    activeClassName='menu__list-item-link menu__list-item-link--active'
-  >
-    {item.label}
-  </Link>)
+  return item.external
+    ? (<a
+      href={item.path}
+      className='menu__list-item-link'
+    >
+      {item.label} <FaExternalLinkAlt />
+    </a>)
+    : (<Link
+      to={item.path}
+      className='menu__list-item-link'
+      activeClassName='menu__list-item-link menu__list-item-link--active'
+    >
+      {item.label}
+    </Link>)
 }
 
 const collapsingSubmenu = item => {

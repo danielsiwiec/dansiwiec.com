@@ -28,8 +28,20 @@ module.exports = {
         ]
       },
       {
-        label: 'Work',
-        path: '/software/'
+        label: 'Software',
+        path: '/software/',
+        subs: [
+          {
+            label: 'Blog @ Medium',
+            external: true,
+            path: 'https://medium.com/dan-on-coding'
+          },
+          {
+            label: 'Garmin Apps',
+            external: true,
+            path: 'https://apps.garmin.com/en-US/developer/34b3d20b-75d1-425d-8153-68b6be7cb4eb/apps'
+          }
+        ]
       },
       {
         label: 'About me',

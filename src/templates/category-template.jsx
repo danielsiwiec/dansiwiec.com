@@ -31,6 +31,7 @@ export const pageQuery = graphql`
           subs {
             path
             label
+            external
           }
         }
         author {
