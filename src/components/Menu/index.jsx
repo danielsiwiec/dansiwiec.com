@@ -8,6 +8,7 @@ const link = item => {
   return item.external
     ? (<a
       href={item.path}
+      target='_blank'
       className='menu__list-item-link'
     >
       {item.label} <FaExternalLinkAlt />
