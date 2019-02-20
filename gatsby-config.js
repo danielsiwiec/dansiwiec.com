@@ -54,7 +54,8 @@ module.exports = {
       email: 'daniel.siwiec@gmail.com',
       github: 'danielsiwiec',
       linkedin: 'dsiwiec',
-      instagram: 'dansiwiec'
+      instagram: 'dansiwiec',
+      medium: 'dan-on-coding'
     }
   },
   plugins: [

@@ -1,6 +1,6 @@
 import React from 'react'
 import './style.scss'
-import { FaGithub, FaLinkedinIn, FaInstagram, FaEnvelope } from 'react-icons/fa'
+import { FaGithub, FaLinkedinIn, FaInstagram, FaEnvelope, FaMedium } from 'react-icons/fa'
 
 export default props => {
   const author = props.data
@@ -8,7 +8,8 @@ export default props => {
     github: author.github,
     linkedin: author.linkedin,
     instagram: author.instagram,
-    email: author.email
+    email: author.email,
+    medium: author.medium
   }
 
   return (
@@ -17,6 +18,11 @@ export default props => {
         <li className='links__list-item'>
           <a href={`https://www.github.com/${links.github}`} target='_blank' rel='noopener noreferrer' >
             <FaGithub />
+          </a>
+        </li>
+        <li className='links__list-item'>
+          <a href={`https://medium.com/${links.medium}`} target='_blank' rel='noopener noreferrer' >
+            <FaMedium />
           </a>
         </li>
         <li className='links__list-item'>
