@@ -8,6 +8,7 @@ exports.createPages = async ({ graphql, actions }) => {
 
   const postTemplate = path.resolve('./src/templates/post-template.jsx')
   const pageTemplate = path.resolve('./src/templates/page-template.jsx')
+  const raceTemplate = path.resolve('./src/templates/race-template.jsx')
   const tagTemplate = path.resolve('./src/templates/tag-template.jsx')
   const categoryTemplate = path.resolve('./src/templates/category-template.jsx')
 
@@ -42,6 +43,12 @@ exports.createPages = async ({ graphql, actions }) => {
       createPage({
         path: edge.node.fields.slug,
         component: slash(pageTemplate),
+        context: { slug: edge.node.fields.slug }
+      })
+    } else if (_.get(edge, 'node.frontmatter.layout') === 'race') {
+      createPage({
+        path: edge.node.fields.slug,
+        component: slash(raceTemplate),
         context: { slug: edge.node.fields.slug }
       })
     } else if (_.get(edge, 'node.frontmatter.layout') === 'post') {

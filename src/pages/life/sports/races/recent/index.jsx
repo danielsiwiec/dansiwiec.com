@@ -32,7 +32,7 @@ export default (props) => {
 }
 
 const race = (date, title, slug) => {
-  return (<li>{moment(date).format('MMMM YYYY')} - <Link to={slug}>{title}</Link></li>)
+  return (<li key={date}>{moment(date).format('MMMM YYYY')} - <Link to={slug}>{title}</Link></li>)
 }
 
 export const pageQuery = graphql`
@@ -63,7 +63,7 @@ export const pageQuery = graphql`
       }
     }
     allMarkdownRemark(limit: 1000,
-      filter: {frontmatter: {category: {eq: "race"}, layout: {eq: "page"}}},
+      filter: {frontmatter: {category: {eq: "race"}, layout: {eq: "race"}}},
       sort: {order: DESC, fields: [frontmatter___date]}) {
       edges {
         node {

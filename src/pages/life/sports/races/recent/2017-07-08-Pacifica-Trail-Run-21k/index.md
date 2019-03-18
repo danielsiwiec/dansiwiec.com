@@ -1,9 +1,12 @@
 ---
 date: 2017-07-08
 title: Pacifica Trail Run 21k
-garmin: https://connect.garmin.com/modern/activity/1842642557
 category: race
-layout: page
+layout: race
+garmin: https://connect.garmin.com/modern/activity/1842642557
+results: http://ultrasignup.com/results_event.aspx?did=44641#id1313783
+distance: Half Marathon
+place: 4/30
 ---
 
 ![pacifica](pacificatrail-run.png)
