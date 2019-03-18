@@ -15,14 +15,18 @@ export default props => {
             <table>
               <tr>
                 <th>Distance</th>
-                <th>Place</th>
-                <th>Tracker</th>
-                <th>Results</th>
+                <td>{page.frontmatter.distance}</td>
               </tr>
               <tr>
-                <td>{page.frontmatter.distance}</td>
+                <th>Place</th>
                 <td>{page.frontmatter.place}</td>
+              </tr>
+              <tr>
+                <th>Tracker</th>
                 <td><a href={page.frontmatter.garmin} target='_blank' rel='noopener noreferrer'>Here</a></td>
+              </tr>
+              <tr>
+                <th>Results</th>
                 <td><a href={page.frontmatter.results} target='_blank' rel='noopener noreferrer'>Here</a></td>
               </tr>
             </table>
