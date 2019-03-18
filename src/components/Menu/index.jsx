@@ -9,6 +9,7 @@ const link = item => {
     ? (<a
       href={item.path}
       target='_blank'
+      rel='noopener noreferrer'
       className='menu__list-item-link'
     >
       {item.label} <FaExternalLinkAlt />
