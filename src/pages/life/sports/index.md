@@ -6,6 +6,9 @@ layout: page
 ### Races
 Come to join or cheer me on at my [upcoming races](sports/races/upcoming)! Also, check out some of my [recent starts](sports/races/recent)
 
+### Snowboarding
+I'm an avid boarded. During the season I spend most of the weekends riding around Lake Tahoe or in Canada. See more [here](sports/boarding)
+
 ### Swimming
 I swim at the Aquatic park, in the San Francisco Bay, usually early mornings or evenings. Recently working on pushing the distance towards 2 miles.
 
