@@ -1,0 +1,23 @@
+@import '~bulma/bulma.sass';
+
+.project-item {
+  padding: 20px 20px 20px 20px;
+}
+
+.content .project-title {
+  margin-bottom: 0;
+}
+
+.content .stack-list {
+  margin-top: 0;
+  margin-left: 0;
+}
+
+.stack {
+  list-style-type: none;
+  margin-bottom: 0;
+}
+
+.project-description {
+  padding-bottom: 10px;
+}

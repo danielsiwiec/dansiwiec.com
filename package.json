@@ -16,6 +16,7 @@
   "author": "Dan Siwiec",
   "license": "MIT",
   "dependencies": {
+    "bulma": "^0.7.4",
     "disqus-react": "^1.0.5",
     "gatsby": "^2.3.4",
     "gatsby-image": "^2.0.36",
