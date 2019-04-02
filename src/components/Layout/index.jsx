@@ -3,6 +3,7 @@ import Helmet from 'react-helmet'
 import '../../assets/scss/init.scss'
 import 'prismjs/themes/prism.css'
 import favicon from '../../../static/favicon.png'
+import Sidebar from '../Sidebar'
 
 export default props => {
   const { children } = props
@@ -15,7 +16,12 @@ export default props => {
           { rel: 'icon', type: 'image/png', href: `${favicon}` }
         ]}
       />
-      {children}
+      <Sidebar {...props} />
+      <div className='content'>
+        <div className='content__inner'>
+          {children}
+        </div>
+      </div>
     </div>
   )
 }

@@ -1,7 +1,7 @@
 import React from 'react'
 import { graphql } from 'gatsby'
 import Layout from '../../../components/Layout'
-import Sidebar from '../../../components/Sidebar'
+
 import PortfolioItem from '../../../components/PortfolioItem'
 
 export default props => {
@@ -9,18 +9,13 @@ export default props => {
 
   return (
     <Layout {...props}>
-      <Sidebar {...props} />
-      <div className='content'>
-        <div className='content__inner'>
-          <h1 className='page__title'>Portfolio</h1>
-          <div className='columns is-multiline'>
-            {projects.map(project => (
-              <div className='column is-half' key={project.node.frontmatter.title}>
-                <PortfolioItem project={project.node.frontmatter} />
-              </div>
-            ))}
+      <h1 className='page__title'>Portfolio</h1>
+      <div className='columns is-multiline'>
+        {projects.map(project => (
+          <div className='column is-half' key={project.node.frontmatter.title}>
+            <PortfolioItem project={project.node.frontmatter} />
           </div>
-        </div>
+        ))}
       </div>
     </Layout>
   )

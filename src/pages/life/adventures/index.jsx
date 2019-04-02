@@ -1,7 +1,6 @@
 import React from 'react'
 import { graphql } from 'gatsby'
 import Layout from '../../../components/Layout'
-import Sidebar from '../../../components/Sidebar'
 import Adventure from '../../../components/Adventure'
 import InfiniteScroll from '../../../components/InfiniteScroll'
 
@@ -10,14 +9,9 @@ export default props => {
 
   return (
     <Layout {...props}>
-      <Sidebar {...props} />
-      <div className='content'>
-        <div className='content__inner'>
-          <h1 className='page__title'>Adventures</h1>
+      <h1 className='page__title'>Adventures</h1>
             Bushwacking, world trotting, hiking, trouble making - you name it!
-          <InfiniteScroll items={adventures} sectionFactory={section} />
-        </div>
-      </div>
+      <InfiniteScroll items={adventures} sectionFactory={section} />
     </Layout>
   )
 }

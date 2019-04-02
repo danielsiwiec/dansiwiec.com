@@ -1,7 +1,6 @@
 import React from 'react'
 import Helmet from 'react-helmet'
 import { graphql } from 'gatsby'
-import Layout from '../components/Layout'
 import RaceTemplateDetails from '../components/RaceTemplateDetails'
 
 export default props => {
@@ -11,13 +10,13 @@ export default props => {
   const excerpt = page.excerpt
 
   return (
-    <Layout {...props}>
+    <div>
       <Helmet>
         <title>{`${pageTitle} - ${title}`}</title>
         <meta name='description' content={excerpt} />
       </Helmet>
       <RaceTemplateDetails {...props} />
-    </Layout>
+    </div>
   )
 }
 
