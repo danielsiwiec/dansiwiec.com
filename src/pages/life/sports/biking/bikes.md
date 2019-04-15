@@ -7,12 +7,11 @@ layout: page
 TREK Domane S6 2017, [specs](http://archive.trekbikes.com/us/en/2017/Trek/domane_s_6)
 ![](domane.jpeg)
 
-### MTB
-TREK Superfly 2013, [specs](http://archive.trekbikes.com/us/en/2013/Trek/superfly)
+### RIP
 
+TREK Superfly 2013, [specs](http://archive.trekbikes.com/us/en/2013/Trek/superfly). This poor chap has been stolen :( Didn't get nearly enough single track time on it.
 ![](superfly.jpg)
 
-### RIP
 Schwinn World Sport 1987. My first road bike, cost $180 on Craigslist, but priceless for its character!
 ![](schwinn.jpg)
 
