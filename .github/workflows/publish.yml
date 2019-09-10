@@ -13,11 +13,15 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: 12
-    - name: npm install and build
+    - name: Build with npm
       run: |
         npm install
         npm run build
       env:
         CI: true
-    - name: publish to GitHub Pages
-      run: npm run deploy
+    - name: Deploy to GitHub Pages
+      uses: JamesIves/github-pages-deploy-action@master
+      env:
+        ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+        BRANCH: gh-pages
+        FOLDER: public
