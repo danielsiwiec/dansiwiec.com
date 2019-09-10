@@ -4,7 +4,7 @@ import chunk from 'lodash/chunk'
 const INITIAL_COUNT = 2
 
 // This would normally be in a Redux store or some other global data store.
-if (typeof window !== `undefined`) {
+if (typeof window !== 'undefined') {
   window.itemsToShow = INITIAL_COUNT
 }
 
@@ -12,7 +12,7 @@ export default class InfitniteScroll extends React.Component {
   constructor (props) {
     super(props)
     let itemsToShow = INITIAL_COUNT
-    if (typeof window !== `undefined`) {
+    if (typeof window !== 'undefined') {
       itemsToShow = window.itemsToShow
     }
 
@@ -37,11 +37,11 @@ export default class InfitniteScroll extends React.Component {
   }
 
   componentDidMount () {
-    window.addEventListener(`scroll`, this.handleScroll)
+    window.addEventListener('scroll', this.handleScroll)
   }
 
   componentWillUnmount () {
-    window.removeEventListener(`scroll`, this.handleScroll)
+    window.removeEventListener('scroll', this.handleScroll)
     window.itemsToShow = this.state.itemsToShow
   }
 

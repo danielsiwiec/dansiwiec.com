@@ -5,7 +5,7 @@ import Adventure from '../../../components/Adventure'
 import InfiniteScroll from '../../../components/InfiniteScroll'
 
 export default props => {
-  let adventures = props.data.allMarkdownRemark.edges
+  const adventures = props.data.allMarkdownRemark.edges
 
   return (
     <Layout {...props}>

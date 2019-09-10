@@ -5,7 +5,7 @@ import Layout from '../../../components/Layout'
 import PortfolioItem from '../../../components/PortfolioItem'
 
 export default props => {
-  let projects = props.data.allMarkdownRemark.edges
+  const projects = props.data.allMarkdownRemark.edges
 
   return (
     <Layout {...props}>

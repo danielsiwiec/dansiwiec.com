@@ -16,22 +16,22 @@ export default props => {
     <div className='links'>
       <ul className='links__list'>
         <li className='links__list-item'>
-          <a href={`https://www.github.com/${links.github}`} target='_blank' rel='noopener noreferrer' >
+          <a href={`https://www.github.com/${links.github}`} target='_blank' rel='noopener noreferrer'>
             <FaGithub />
           </a>
         </li>
         <li className='links__list-item'>
-          <a href={`https://medium.com/${links.medium}`} target='_blank' rel='noopener noreferrer' >
+          <a href={`https://medium.com/${links.medium}`} target='_blank' rel='noopener noreferrer'>
             <FaMedium />
           </a>
         </li>
         <li className='links__list-item'>
-          <a href={`https://www.linkedin.com/in/${links.linkedin}`} target='_blank' rel='noopener noreferrer' >
+          <a href={`https://www.linkedin.com/in/${links.linkedin}`} target='_blank' rel='noopener noreferrer'>
             <FaLinkedinIn />
           </a>
         </li>
         <li className='links__list-item'>
-          <a href={`https://www.instagram.com/${links.instagram}`} target='_blank' rel='noopener noreferrer' >
+          <a href={`https://www.instagram.com/${links.instagram}`} target='_blank' rel='noopener noreferrer'>
             <FaInstagram />
           </a>
         </li>
