@@ -10,7 +10,7 @@
     "clean": "rm -rf public && rm -rf .cache",
     "lint": "standard",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "deploy": "npm run build && gh-pages -d public"
+    "deploy": "gh-pages -d public"
   },
   "repository": "git+https://github.com/alxshelepenok/gatsby-starter-lumen.git",
   "author": "Dan Siwiec",

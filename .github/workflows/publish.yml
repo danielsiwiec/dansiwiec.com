@@ -19,3 +19,5 @@ jobs:
         npm run build
       env:
         CI: true
+    - name: publish to GitHub Pages
+      run: npm run deploy
