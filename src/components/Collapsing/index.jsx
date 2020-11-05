@@ -15,7 +15,7 @@ export default class Collapsing extends React.Component {
   render () {
     return (
       <Collapsible
-        trigger={<button className='menu__list-item-link like-anchor'>{this.props.label}</button>}
+        trigger={<a className='menu__list-item-link like-anchor'>{this.props.label}</a>}
         open={this.state.open}
         transitionTime={200}
       >
