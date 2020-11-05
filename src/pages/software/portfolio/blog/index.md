@@ -7,4 +7,6 @@ pic: blog.png
 description: This page!
 stack:
   - Gatsby.js
+  - React
+  - GitHub Actions
 ---

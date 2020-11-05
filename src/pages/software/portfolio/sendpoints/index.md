@@ -11,4 +11,5 @@ stack:
   - Google Maps
   - MongoDb
   - Garmin Connect IQ
+  - Heroku
 ---

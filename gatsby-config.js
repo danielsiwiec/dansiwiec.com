@@ -33,7 +33,7 @@ module.exports = {
         path: '/software/',
         subs: [
           {
-            label: 'Portfolio',
+            label: 'Side Projects',
             path: '/software/portfolio'
           },
           {
