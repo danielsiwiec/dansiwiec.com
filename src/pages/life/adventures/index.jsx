@@ -10,7 +10,7 @@ export default props => {
   return (
     <Layout {...props}>
       <h1 className='page__title'>Adventures</h1>
-            Bushwacking, world trotting, hiking, trouble making - you name it!
+      Bushwacking, world trotting, hiking, trouble making - you name it!
       <InfiniteScroll items={adventures} sectionFactory={section} />
     </Layout>
   )

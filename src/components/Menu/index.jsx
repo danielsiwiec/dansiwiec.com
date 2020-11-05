@@ -38,7 +38,8 @@ const collapsingSubmenu = item => {
           </li>
         ))}
       </ul>
-    </Collapsing>)
+    </Collapsing>
+  )
 }
 
 export default props => {
