@@ -26,29 +26,7 @@ const race = (date, title, slug) => {
 export const pageQuery = graphql`
   query {
     site {
-      siteMetadata {
-        title
-        subtitle
-        copyright
-        menu {
-          label
-          path
-          subs {
-            path
-            label
-            external
-          }
-        }
-        author {
-          name
-          gravatar
-          email
-          github
-          linkedin
-          instagram
-          medium
-        }
-      }
+      ...SiteInformation
     }
     allMarkdownRemark(limit: 1000,
       filter: {frontmatter: {category: {eq: "race"}, layout: {eq: "race"}}},

@@ -33,7 +33,7 @@ module.exports = {
         path: '/software/',
         subs: [
           {
-            label: 'Side Projects',
+            label: 'Pet Projects',
             path: '/software/portfolio'
           },
           {
@@ -55,7 +55,8 @@ module.exports = {
       github: 'danielsiwiec',
       linkedin: 'dsiwiec',
       instagram: 'dansiwiec',
-      medium: 'dan-on-coding'
+      medium: 'dan-on-coding',
+      strava: '11726996'
     }
   },
   plugins: [

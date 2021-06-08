@@ -17,31 +17,35 @@ const component = props => {
 }
 
 export const pageQuery = graphql`
-  query {
-    site {
-      siteMetadata {
-        title
-        subtitle
-        copyright
-        menu {
-          label
+  fragment SiteInformation on Site {
+    siteMetadata {
+      title
+      subtitle
+      copyright
+      menu {
+        label
+        path
+        subs {
           path
-          subs {
-            path
-            label
-            external
-          }
-        }
-        author {
-          name
-          gravatar
-          email
-          github
-          linkedin
-          instagram
-          medium
+          label
+          external
         }
       }
+      author {
+        name
+        gravatar
+        email
+        github
+        linkedin
+        instagram
+        medium
+        strava
+      }
+    }
+  }
+  query {
+    site {
+      ...SiteInformation
     }
   }
 `

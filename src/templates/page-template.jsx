@@ -23,29 +23,7 @@ const component = props => {
 export const pageQuery = graphql`
   query($slug: String!) {
     site {
-      siteMetadata {
-        title
-        subtitle
-        copyright
-        menu {
-          label
-          path
-          subs {
-            path
-            label
-            external
-          }
-        }
-        author {
-          name
-          gravatar
-          email
-          github
-          linkedin
-          instagram
-          medium
-        }
-      }
+      ...SiteInformation
     }
     markdownRemark(fields: { slug: { eq: $slug } }) {
       id

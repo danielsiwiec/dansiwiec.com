@@ -9,7 +9,7 @@ const component = props => {
 
   return (
     <Layout {...props}>
-      <h1 className='page__title'>Portfolio</h1>
+      <h1 className='page__title'>Pet Projects</h1>
       <div className='columns is-multiline'>
         {projects.map(project => (
           <div className='column is-half' key={project.node.frontmatter.title}>
@@ -44,32 +44,9 @@ export const pageQuery = graphql`
       }
     }
     site {
-        siteMetadata {
-          title
-          subtitle
-          copyright
-          menu {
-            label
-            path
-            subs {
-              path
-              label
-              external
-            }
-          }
-          author {
-            name
-            gravatar
-            email
-            github
-            linkedin
-            instagram
-            medium
-          }
-        }
-      }
+      ...SiteInformation
+    }
   }
-  
 `
 
 export default component
