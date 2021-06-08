@@ -4,7 +4,7 @@ import Layout from '../../../components/Layout'
 
 import PortfolioItem from '../../../components/PortfolioItem'
 
-export default props => {
+const component = props => {
   const projects = props.data.allMarkdownRemark.edges
 
   return (
@@ -71,3 +71,5 @@ export const pageQuery = graphql`
   }
   
 `
+
+export default component

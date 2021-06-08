@@ -3,7 +3,7 @@ import Img from 'gatsby-image'
 import './style.scss'
 import { FaDatabase } from 'react-icons/fa'
 
-export default ({ project }) => {
+const component = ({ project }) => {
   return (
     <div className='project-item'>
       <h4 className='project-title'>{project.title}</h4>
@@ -21,3 +21,5 @@ export default ({ project }) => {
     </div>
   )
 }
+
+export default component

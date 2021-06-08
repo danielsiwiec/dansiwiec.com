@@ -42,7 +42,7 @@ const collapsingSubmenu = item => {
   )
 }
 
-export default props => {
+const component = props => {
   const menu = props.data
 
   const menuBlock = (
@@ -61,3 +61,5 @@ export default props => {
     </nav>
   )
 }
+
+export default component

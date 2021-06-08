@@ -4,7 +4,7 @@ import Menu from '../Menu'
 import Links from '../Links'
 import './style.scss'
 
-export default props => {
+const component = props => {
   const { author, subtitle, copyright, menu } = props.data.site.siteMetadata
 
   const authorBlock = (
@@ -42,3 +42,5 @@ export default props => {
     </div>
   )
 }
+
+export default component

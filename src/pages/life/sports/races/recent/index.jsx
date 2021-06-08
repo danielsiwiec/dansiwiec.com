@@ -3,7 +3,7 @@ import { Link, graphql } from 'gatsby'
 import moment from 'moment'
 import Layout from '../../../../../components/Layout'
 
-export default (props) => {
+const component = props => {
   const posts = props.data.allMarkdownRemark.edges
   const items = posts.map(post => {
     return race(post.node.frontmatter.date, post.node.frontmatter.title, post.node.fields.slug)
@@ -68,3 +68,5 @@ export const pageQuery = graphql`
   }
   
 `
+
+export default component

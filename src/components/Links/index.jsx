@@ -2,7 +2,7 @@ import React from 'react'
 import './style.scss'
 import { FaGithub, FaLinkedinIn, FaInstagram, FaEnvelope, FaMedium } from 'react-icons/fa'
 
-export default props => {
+const component = props => {
   const author = props.data
   const links = {
     github: author.github,
@@ -44,3 +44,5 @@ export default props => {
     </div>
   )
 }
+
+export default component

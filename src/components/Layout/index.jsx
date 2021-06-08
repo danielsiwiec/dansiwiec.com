@@ -5,7 +5,7 @@ import 'prismjs/themes/prism.css'
 import favicon from '../../../static/favicon.png'
 import Sidebar from '../Sidebar'
 
-export default props => {
+const component = props => {
   const { children } = props
 
   return (
@@ -25,3 +25,5 @@ export default props => {
     </div>
   )
 }
+
+export default component

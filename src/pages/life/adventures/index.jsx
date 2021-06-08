@@ -4,7 +4,7 @@ import Layout from '../../../components/Layout'
 import Adventure from '../../../components/Adventure'
 import InfiniteScroll from '../../../components/InfiniteScroll'
 
-export default props => {
+const component = props => {
   const adventures = props.data.allMarkdownRemark.edges
 
   return (
@@ -67,3 +67,5 @@ export const pageQuery = graphql`
   }
   
 `
+
+export default component

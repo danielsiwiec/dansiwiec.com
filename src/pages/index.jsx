@@ -3,7 +3,7 @@ import Helmet from 'react-helmet'
 import { graphql } from 'gatsby'
 import Layout from '../components/Layout'
 
-export default props => {
+const component = props => {
   const { title, subtitle } = props.data.site.siteMetadata
 
   return (
@@ -45,3 +45,5 @@ export const pageQuery = graphql`
     }
   }
 `
+
+export default component

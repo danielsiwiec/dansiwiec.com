@@ -2,7 +2,7 @@ import React from 'react'
 import Layout from '../Layout'
 import './style.scss'
 
-export default props => {
+const component = props => {
   const page = props.data.markdownRemark
 
   return (
@@ -14,3 +14,5 @@ export default props => {
     </Layout>
   )
 }
+
+export default component

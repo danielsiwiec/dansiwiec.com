@@ -2,7 +2,7 @@ import React from 'react'
 import { graphql } from 'gatsby'
 import Layout from '../components/Layout'
 
-export default props => {
+const component = props => {
   return (
     <Layout {...props}>
       <div className='page'>
@@ -44,3 +44,5 @@ export const pageQuery = graphql`
     }
   }
 `
+
+export default component

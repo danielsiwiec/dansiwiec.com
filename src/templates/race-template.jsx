@@ -3,7 +3,7 @@ import Helmet from 'react-helmet'
 import { graphql } from 'gatsby'
 import RaceTemplateDetails from '../components/RaceTemplateDetails'
 
-export default props => {
+const component = props => {
   const { title } = props.data.site.siteMetadata
   const page = props.data.markdownRemark
   const pageTitle = page.frontmatter.title
@@ -62,3 +62,5 @@ export const pageQuery = graphql`
     }
   }
 `
+
+export default component
