@@ -3,6 +3,10 @@ title: "Bikes"
 layout: page
 ---
 
+### MTB
+Ibis Ripley 2019, [specs](https://www.ibiscycles.com/bikes/ripley)
+![](ripley.jpeg)
+
 ### Road
 TREK Domane S6 2017, [specs](http://archive.trekbikes.com/us/en/2017/Trek/domane_s_6)
 ![](domane.jpeg)
