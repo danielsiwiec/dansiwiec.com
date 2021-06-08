@@ -1,0 +1,2 @@
+(self.webpackChunkdansiwiec_com=self.webpackChunkdansiwiec_com||[]).push([[256],{1657:function(e,t,a){"use strict";a.r(t);var s=a(7294),c=a(5410);t.default=function(e){return s.createElement(c.Z,e,s.createElement("div",{className:"page"},s.createElement("h1",{className:"page__title"},"NOT FOUND"),s.createElement("div",{className:"page__body"},s.createElement("p",null,"You just hit a route that doesn't exist... the sadness."))))}}}]);
+//# sourceMappingURL=component---src-pages-404-jsx-464264b3737b5b7ce1d4.js.map
