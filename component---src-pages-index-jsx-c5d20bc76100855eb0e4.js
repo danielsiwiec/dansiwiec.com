@@ -1,2 +1,0 @@
-"use strict";(self.webpackChunkdansiwiec_com=self.webpackChunkdansiwiec_com||[]).push([[230],{610:function(e,t,n){n.r(t);var a=n(7294),c=n(5414),i=n(6933);t.default=function(e){var t=e.data.site.siteMetadata,n=t.title,l=t.subtitle;return a.createElement(i.Z,e,a.createElement(c.Z,null,a.createElement("title",null,n),a.createElement("meta",{name:"description",content:l})))}}}]);
-//# sourceMappingURL=component---src-pages-index-jsx-c5d20bc76100855eb0e4.js.map
