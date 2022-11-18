@@ -22,7 +22,7 @@ const section = (item, index) => {
 
 export const pageQuery = graphql`
   query {
-    allMarkdownRemark(filter: {frontmatter: {category: {eq: "adventures"}}}, sort: {fields: [frontmatter___date], order: DESC}) {
+    allMarkdownRemark(filter: {frontmatter: {category: {eq: "adventures"}}}, sort: {frontmatter: {date: DESC}}) {
       edges {
         node {
           frontmatter {

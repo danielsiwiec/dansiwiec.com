@@ -23,7 +23,7 @@ const component = props => {
 
 export const pageQuery = graphql`
   query {
-    allMarkdownRemark(filter: {frontmatter: {category: {eq: "portfolio"}}}, sort: {fields: [frontmatter___date], order: DESC}) {
+    allMarkdownRemark(filter: {frontmatter: {category: {eq: "portfolio"}}}, sort: {frontmatter: {date: DESC}}) {
       edges {
         node {
           frontmatter {
