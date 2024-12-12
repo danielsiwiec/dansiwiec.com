@@ -2,6 +2,9 @@ name: Build & Deploy
 
 on: [push]
 
+permissions:
+  contents: write
+
 jobs:
   build:
 
@@ -24,6 +27,5 @@ jobs:
     - name: Deploy to GitHub Pages
       uses: JamesIves/github-pages-deploy-action@v4
       with:
-        token: ${{ secrets.ACCESS_TOKEN }}
         branch: gh-pages
         folder: public
