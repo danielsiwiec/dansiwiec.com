@@ -38,10 +38,10 @@ test.describe('Homepage and Navigation Tests', () => {
 
     await page.waitForTimeout(500)
 
-    const adventuresLink = page.locator('a[href="/life/adventures"]')
+    const adventuresLink = page.locator('a[href="/life/adventures/"]')
     await expect(adventuresLink).toBeVisible()
 
-    const sportsLink = page.locator('a[href="/life/sports"]')
+    const sportsLink = page.locator('a[href="/life/sports/"]')
     await expect(sportsLink).toBeVisible()
   })
 
@@ -51,7 +51,7 @@ test.describe('Homepage and Navigation Tests', () => {
 
     await page.waitForTimeout(500)
 
-    const portfolioLink = page.locator('a[href="/software/portfolio"]')
+    const portfolioLink = page.locator('a[href="/software/portfolio/"]')
     await expect(portfolioLink).toBeVisible()
   })
 
