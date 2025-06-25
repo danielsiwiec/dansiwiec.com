@@ -107,10 +107,13 @@ module.exports = {
       }
     },
     'gatsby-plugin-offline',
-    'gatsby-plugin-react-helmet',
     {
       resolve: 'gatsby-plugin-sass',
       options: {
+        sassOptions: {
+          quietDeps: true,
+          silenceDeprecations: ['legacy-js-api', 'import', 'global-builtin', 'color-functions']
+        },
         postCssPlugins: [
           lost(),
           pxtorem({
